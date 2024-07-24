@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "DeathWorld",
+			"Path": "..\\Source\\DeathWorld.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "DeathWorldEditor",
+			"Path": "..\\Source\\DeathWorldEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

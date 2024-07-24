@@ -1,0 +1,122 @@
+[
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\Custom_GameMode.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\Custom_GameMode.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\DeathWorld.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\DeathWorld.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\DeathWorld.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\Game_PlayerState.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\Game_PlayerState.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\MainCharacter.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\MainCharacter.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\My_GameInstance.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\My_GameInstance.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\My_GameState.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\My_GameState.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\My_PlayerController.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Source\\DeathWorld\\My_PlayerController.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.40.33521\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\.vscode\\compileCommands_Default\\DeathWorld.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	}
+]

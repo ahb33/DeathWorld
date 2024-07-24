@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/User/Documents/Unreal Projects/DeathWorld/Content/BP_MainCharacter.uasset",
+				"C:/Users/User/Documents/Unreal Projects/DeathWorld/Content/Maps/Level_01.umap",
+				"C:/Users/User/Documents/Unreal Projects/DeathWorld/Content/Blueprints/BP_MainCharacter.uasset"
+			]
+		}
+	]
+}
