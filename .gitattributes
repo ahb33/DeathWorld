@@ -1,0 +1,4 @@
+Binaries/Win64/*.pdb filter=lfs diff=lfs merge=lfs -text
+Binaries/Win64/*.exe filter=lfs diff=lfs merge=lfs -text
+Intermediate/Build/Win64/x64/DeathWorld/Development/Engine/SharedPCH.Engine.Cpp20.h.pch filter=lfs diff=lfs merge=lfs -text
+Intermediate/Build/Win64/x64/DeathWorldEditor/Development/Engine/SharedPCH.Engine.Cpp20.h.pch filter=lfs diff=lfs merge=lfs -text
