@@ -1,32 +1,66 @@
-# Ignore project-specific files
-*.sln
-*.suo
-*.xcodeproj
-*.xcworkspace
-*.idea/
-.vscode/
-
-# Ignore intermediate files and build outputs
+# Ignore build system files
 Binaries/
-Intermediate/
 DerivedDataCache/
+Intermediate/
 Saved/
-*.VC.db
-*.VC.VC.opendb
-*.log
 
 # Ignore user-specific files
-*.userprefs
+*.suo
 *.user
 *.userosscache
-*.p4s
-*.sublime-workspace
+*.sln.docstates
 
-# Ignore generated files
-.DS_Store
-Thumbs.db
-*.swp
+# Ignore project-specific files
+*.log
+*.vscode/
+.vscode/
+.vscode/settings.json
+
+# Ignore build outputs
+*.pdb
+*.exe
+*.dll
+*.obj
+*.lib
+*.app
+*.ipa
+*.dsym
+*.exe
+*.out
+*.class
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore backup files
+*.bak
+*.old
+*.orig
+*.tmp
 
 # Ignore system files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Ignore temporary files
+*.swp
+*.swo
+*.swn
+*.swd
+*.tmp
+*.temp
+
+# Ignore the main executable
+DeathWorld.exe
+
+# Ignore Unreal Engine build-specific files
+*.xcodeproj
+*.xcworkspace
+*.project
+*.jucer
+*.pro
