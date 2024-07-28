@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Intermediate", "Intermediate", "{60BE8B22-279F-4FBD-A78F-378B77618D1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{42C1142B-140E-4C5A-90DC-1052DA2C8F13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildRulesProjects", "BuildRulesProjects", "{00C6CE09-526F-40CF-8524-8FB19002FB4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathWorldModuleRules", "Intermediate\Build\BuildRulesProjects\DeathWorldModuleRules\DeathWorldModuleRules.csproj", "{8D589931-D6AD-4A75-9A4D-463B7FF15528}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D589931-D6AD-4A75-9A4D-463B7FF15528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D589931-D6AD-4A75-9A4D-463B7FF15528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D589931-D6AD-4A75-9A4D-463B7FF15528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D589931-D6AD-4A75-9A4D-463B7FF15528}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42C1142B-140E-4C5A-90DC-1052DA2C8F13} = {60BE8B22-279F-4FBD-A78F-378B77618D1C}
+		{00C6CE09-526F-40CF-8524-8FB19002FB4E} = {42C1142B-140E-4C5A-90DC-1052DA2C8F13}
+		{8D589931-D6AD-4A75-9A4D-463B7FF15528} = {00C6CE09-526F-40CF-8524-8FB19002FB4E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0DBD6AE-4C74-48F5-AADA-AB04350FF217}
+	EndGlobalSection
+EndGlobal

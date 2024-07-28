@@ -18,5 +18,4 @@ ACustom_GameMode::ACustom_GameMode()
     {
         DefaultPawnClass = PlayerPawnBPClass.Class;
     }
-
 }
