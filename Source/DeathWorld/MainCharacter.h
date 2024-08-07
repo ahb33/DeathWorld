@@ -3,12 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BaseCharacter.h"
 #include "GameFramework/Character.h"
 #include "UObject/ConstructorHelpers.h"
 #include "MainCharacter.generated.h"
 
 UCLASS()
-class DEATHWORLD_API AMainCharacter : public ACharacter
+class DEATHWORLD_API AMainCharacter : public ABaseCharacter
 {
 	GENERATED_BODY()
 
@@ -30,29 +31,12 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	void Move(const struct FInputActionValue& Value);
-	void Look(const FInputActionValue& Value);
 	void SprintStart(const FInputActionValue& Value);
 	void SprintEnd(const FInputActionValue& Value);
 	void Interact(const FInputActionValue& Value);
 
 private:
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<class USpringArmComponent> CameraBoom;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<class UCameraComponent> FollowCamera;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<class UInputMappingContext> DefaultMappingContext;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<class UInputAction> MoveAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<class UInputAction> LookAction;
-	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UInputAction> SprintAction;
 

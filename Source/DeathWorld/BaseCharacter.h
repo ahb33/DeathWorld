@@ -1,29 +1,51 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "UObject/ConstructorHelpers.h"
 #include "BaseCharacter.generated.h"
 
 UCLASS()
 class DEATHWORLD_API ABaseCharacter : public ACharacter
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
-	ABaseCharacter();
+    // Sets default values for this character's properties
+    ABaseCharacter();
+
+    // Called every frame
+    virtual void Tick(float DeltaTime) override;
+
+    // Called to bind functionality to input
+    virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+    // Called when the game starts or when spawned
+    virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+    void Move(const struct FInputActionValue& Value);
+    void Look(const FInputActionValue& Value);
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+    // Replicated properties
+    UPROPERTY(Replicated, EditAnywhere, BlueprintReadOnly, Category = Stats)
+    float Health;
 
+private:
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+    TObjectPtr<class USpringArmComponent> CameraBoom;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+    TObjectPtr<class UCameraComponent> FollowCamera;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    TObjectPtr<class UInputMappingContext> DefaultMappingContext;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    TObjectPtr<class UInputAction> MoveAction;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    TObjectPtr<class UInputAction> LookAction;
 };
