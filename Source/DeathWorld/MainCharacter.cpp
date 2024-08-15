@@ -50,13 +50,29 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void AMainCharacter::SprintStart(const FInputActionValue& Value)
 {
-    GetCharacterMovement()->MaxWalkSpeed *= 2;
+    SprintStart_Server();
 }
+
+void AMainCharacter::SprintStart_Server_Implementation()
+{
+
+    GetCharacterMovement()->MaxWalkSpeed *= speedMultiplier;
+}
+
+
 
 void AMainCharacter::SprintEnd(const FInputActionValue& Value)
 {
-    GetCharacterMovement()->MaxWalkSpeed /= 2;
+    SprintEnd_Server();
 }
+
+void AMainCharacter::SprintEnd_Server_Implementation()
+{
+
+    GetCharacterMovement()->MaxWalkSpeed *= speedMultiplier;
+}
+
+
 
 void AMainCharacter::Interact(const FInputActionValue& Value)
 {

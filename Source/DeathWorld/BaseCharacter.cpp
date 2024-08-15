@@ -29,7 +29,7 @@ ABaseCharacter::ABaseCharacter()
 
     GetCharacterMovement()->bOrientRotationToMovement = true;
     GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
-    GetCharacterMovement()->MaxWalkSpeed = 20.f;
+    GetCharacterMovement()->MaxWalkSpeed = 50.f;
     GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 
     MoveAction = nullptr;
@@ -66,23 +66,46 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
     }
 }
 
-void ABaseCharacter::Move(const struct FInputActionValue& Value)
+void ABaseCharacter::Move(const FInputActionValue& Value)
 {
-    FVector2D MovementVector = Value.Get<FVector2D>();
-    if (Controller)
+    // Get the movement vector from the input action (which should be a FVector2D)
+    const FVector2D MovementVector = Value.Get<FVector2D>();
+
+    if (Controller && (MovementVector.X != 0.0f || MovementVector.Y != 0.0f))
     {
-        AddMovementInput(GetActorForwardVector(), MovementVector.Y);
-        AddMovementInput(GetActorRightVector(), MovementVector.X);
+        // Get the rotation of the controller
+        const FRotator Rotation = Controller->GetControlRotation();
+        const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+        // Get forward and right vectors based on controller's yaw rotation
+        const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+        const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+
+        // Move character based on the forward and right direction, scaled by input value
+        AddMovementInput(ForwardDirection, MovementVector.Y);
+        AddMovementInput(RightDirection, MovementVector.X);
     }
+        // const auto Rotation = Controller->GetControlRotation();
+        // const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+        // const auto ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+        // const auto RightDirectionDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+
+
+        // AddMovementInput(GetActorForwardVector(), MovementVector.Y);
+        // AddMovementInput(GetActorRightVector(), MovementVector.X);
 }
+
 
 void ABaseCharacter::Look(const FInputActionValue& Value)
 {
-    FVector2D LookVector = Value.Get<FVector2D>();
-    if (Controller != nullptr)
+    const FVector2D LookAxisVector = Value.Get<FVector2D>();
+
+    if (Controller)
     {
-        AddControllerYawInput(LookVector.X);
-        AddControllerPitchInput(LookVector.Y);
+        // Apply a scaling factor to control sensitivity
+        AddControllerYawInput(LookAxisVector.X);
+        AddControllerPitchInput(LookAxisVector.Y);
     }
 }
 
@@ -93,4 +116,6 @@ void ABaseCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     DOREPLIFETIME(ABaseCharacter, Health);
 
     // Add other properties to replicate
+
+
 }

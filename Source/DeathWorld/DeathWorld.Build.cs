@@ -12,6 +12,16 @@ public class DeathWorld : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
+		// Define the API macro for this module
+        if (Target.Type == TargetRules.TargetType.Editor)
+        {
+            PublicDefinitions.Add("DeathWorld_API=DLLEXPORT");
+        }
+        else
+        {
+            PublicDefinitions.Add("DeathWorld_API=DLLIMPORT");
+        }
+		
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 		

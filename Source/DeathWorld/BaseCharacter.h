@@ -25,7 +25,7 @@ protected:
     virtual void BeginPlay() override;
 
     void Move(const struct FInputActionValue& Value);
-    void Look(const FInputActionValue& Value);
+    void Look(const struct FInputActionValue& Value);
 
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
@@ -34,6 +34,9 @@ protected:
     float Health;
 
 private:
+
+    // TObjectPtr automatically tracks references to UObject instances, 
+    // which helps the garbage collector keep track of objects that are still in use.
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
     TObjectPtr<class USpringArmComponent> CameraBoom;
 
@@ -48,4 +51,6 @@ private:
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
     TObjectPtr<class UInputAction> LookAction;
+
+    
 };

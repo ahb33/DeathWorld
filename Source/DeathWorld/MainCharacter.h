@@ -35,6 +35,12 @@ protected:
 	void SprintEnd(const FInputActionValue& Value);
 	void Interact(const FInputActionValue& Value);
 
+	UFUNCTION(Server, Reliable)
+	void SprintStart_Server();
+
+	UFUNCTION(Server, Reliable)
+	void SprintEnd_Server();
+
 private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
@@ -42,4 +48,8 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UInputAction> InteractAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+    float speedMultiplier;
+
 };

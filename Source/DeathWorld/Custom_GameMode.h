@@ -16,6 +16,7 @@
 UCLASS()
 class DEATHWORLD_API ACustom_GameMode : public AGameMode
 {
+    // include a reference to the My_GameInstance and My_GameState for managing game-wide state and data.
 	GENERATED_BODY()
 	
 public:
