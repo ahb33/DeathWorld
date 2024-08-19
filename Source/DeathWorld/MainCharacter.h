@@ -33,13 +33,24 @@ protected:
 
 	void SprintStart(const FInputActionValue& Value);
 	void SprintEnd(const FInputActionValue& Value);
+
 	void Interact(const FInputActionValue& Value);
+
+	UFUNCTION(Server, Reliable)
+	void Interact_Server();
 
 	UFUNCTION(Server, Reliable)
 	void SprintStart_Server();
 
 	UFUNCTION(Server, Reliable)
 	void SprintEnd_Server();
+
+	/*
+		this function will be used to check if a player is interacting with another object and
+		will be called every frame
+		
+	*/
+	bool isInteracting();
 
 private:
 
@@ -51,5 +62,11 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
     float speedMultiplier;
+
+	// add refence to actor that will be interacted with
+	UPROPERTY()
+	AActor* InteractableActor;
+
+
 
 };
