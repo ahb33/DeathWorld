@@ -19,7 +19,7 @@ class UGame_Interactable : public UInterface
     GENERATED_BODY()
 };
 
-class DeathWorld_API IGame_Interactable
+class DEATHWORLD_API IGame_Interactable
 {
     GENERATED_BODY()
 
@@ -32,9 +32,11 @@ public:
     
     */
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction", meta=(DisplayName= "Interact"))
+    bool CanInteract(class AMainCharacter* CharacterInstigator);
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction", meta=(DisplayName= "Interact"))
     void Interact(class AMainCharacter* CharacterInstigator);
 
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction", meta=(DisplayName= "Interact"))
-    bool CanInteract(class AMainCharacter* CharacterInstigator);
+
 
 };
