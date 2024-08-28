@@ -28,6 +28,8 @@ public:
         create child class for solo menu later - game mode for solo mode
         would also be handled within child class as well as level transition 
 
+        Solo menu will have easy, medium, hard
+
     */
     UFUNCTION()
     void OnSoloClicked(); 
@@ -39,8 +41,14 @@ public:
     UFUNCTION()
     void OnMultiplayerClicked(); 
 
+    void InitializePlayerController();
 
-private:
+    void SetupInputMode();
+
+    void BindButtonEvents();
+
+
+protected:
 
     UPROPERTY(meta = (BindWidget))
 	class UButton* SoloButton;
@@ -49,5 +57,8 @@ private:
 	class UButton* MultiplayerButton;
 
     class AMy_PlayerController* playerController;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
+    TArray<TSubclassOf<UUserWidget>> menuWidgetClasses;
 
 };

@@ -4,45 +4,57 @@
 #include "MainMenuWidget.h"
 #include "Blueprint/UserWidget.h"
 #include "My_PlayerController.h"
+#include "MultiplayerMenuWidget.h"
 #include "Components/Button.h"
 #include "Kismet/GameplayStatics.h"
 
 void UMainMenuWidget::NativeConstruct()
 {
+    Super::NativeConstruct();
+
+    InitializePlayerController();
     MenuSetup();
 }
 
-
+void UMainMenuWidget::InitializePlayerController()
+{
+    // Retrieve the PlayerController directly from the owning player
+    playerController = Cast<AMy_PlayerController>(GetOwningPlayer());
+}
 
 void UMainMenuWidget::MenuSetup()
 {
     AddToViewport();
+    SetupInputMode();
 
-    playerController = Cast<AMy_PlayerController>(UGameplayStatics::GetPlayerController(this, 0));
+    BindButtonEvents();
+}
 
-    if(playerController)
+void UMainMenuWidget::SetupInputMode()
+{
+    if (playerController)
     {
         FInputModeUIOnly InputModeData;
-
-        // // Ensure the menu is focused and ready for input
         InputModeData.SetWidgetToFocus(TakeWidget());
         InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+        
         playerController->SetInputMode(InputModeData);
-        playerController->bShowMouseCursor = false;
-
+        playerController->bShowMouseCursor = true;
     }
+}
 
-    // Bind buttons to their respective functions 
-    if (SoloButton)
+// Ensure that buttons are valid and not already bound to prevent multiple bindings.
+void UMainMenuWidget::BindButtonEvents()
+{
+    if (SoloButton && !SoloButton->OnClicked.IsAlreadyBound(this, &UMainMenuWidget::OnSoloClicked))
     {
         SoloButton->OnClicked.AddDynamic(this, &UMainMenuWidget::OnSoloClicked);
     }
 
-    if (MultiplayerButton)
+    if (MultiplayerButton && !MultiplayerButton->OnClicked.IsAlreadyBound(this, &UMainMenuWidget::OnMultiplayerClicked))
     {
         MultiplayerButton->OnClicked.AddDynamic(this, &UMainMenuWidget::OnMultiplayerClicked);
     }
-
 }
 
 void UMainMenuWidget::OnSoloClicked()
@@ -53,7 +65,24 @@ void UMainMenuWidget::OnSoloClicked()
 
 void UMainMenuWidget::OnMultiplayerClicked()
 {
-    UGameplayStatics::OpenLevel(this, FName("MultiPlayerLevel"));  
+    // Remove the current MainMenu widget from the viewport
+    RemoveFromParent();
+
+    // Assuming the multiplayer widget is at index 1 in the MenuWidgetClasses array
+    if (menuWidgetClasses.IsValidIndex(1))
+    {
+        UMultiplayerMenuWidget* MultiplayerMenuWidget = CreateWidget<UMultiplayerMenuWidget>(GetWorld(), menuWidgetClasses[1]);
+        
+        if (MultiplayerMenuWidget)
+        {
+            // Initialize and display the multiplayer menu
+            MultiplayerMenuWidget->MultiplayerMenuSetup();
+        }
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Invalid index or MultiplayerMenuClass is not set!"));
+    }
 }
 
 
