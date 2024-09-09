@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 
 #include "MainMenuWidget.h"
 #include "Blueprint/UserWidget.h"
@@ -11,9 +9,13 @@
 void UMainMenuWidget::NativeConstruct()
 {
     Super::NativeConstruct();
+    // Only create the widget instance if it's not already in the array
+
+    // // Calling the parent's version of CreateAndStoreWidget directly using Super
+    // Super::CreateAndStoreWidget("MainMenu", mainMenuWidgetClass);
 
     InitializePlayerController();
-    MenuSetup();
+    SetupInputMode();
 }
 
 void UMainMenuWidget::InitializePlayerController()
@@ -24,9 +26,7 @@ void UMainMenuWidget::InitializePlayerController()
 
 void UMainMenuWidget::MenuSetup()
 {
-    AddToViewport();
-    SetupInputMode();
-
+    Super::MenuSetup();
     BindButtonEvents();
 }
 
@@ -65,24 +65,19 @@ void UMainMenuWidget::OnSoloClicked()
 
 void UMainMenuWidget::OnMultiplayerClicked()
 {
-    // Remove the current MainMenu widget from the viewport
-    RemoveFromParent();
+    UE_LOG(LogTemp, Warning, TEXT("MultiplayerClicked"));
+    // Ensure widget creation before attempting transition
+    FName MultiplayerMenu = "MultiplayerMenu";
 
-    // Assuming the multiplayer widget is at index 1 in the MenuWidgetClasses array
-    if (menuWidgetClasses.IsValidIndex(1))
+    if (!menuWidgetMap.Contains(MultiplayerMenu))
     {
-        UMultiplayerMenuWidget* MultiplayerMenuWidget = CreateWidget<UMultiplayerMenuWidget>(GetWorld(), menuWidgetClasses[1]);
-        
-        if (MultiplayerMenuWidget)
-        {
-            // Initialize and display the multiplayer menu
-            MultiplayerMenuWidget->MultiplayerMenuSetup();
-        }
+        UE_LOG(LogTemp, Log, TEXT("Creating MultiplayerMenu widget."));
+        Super::CreateAndStoreWidget(MultiplayerMenu, multiplayerMenuWidgetClass);
     }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Invalid index or MultiplayerMenuClass is not set!"));
-    }
+    
+    RemoveFromParent();
+    TransitionToMenu(MultiplayerMenu);
 }
+
 
 

@@ -1,10 +1,11 @@
 /..bfg-report
 /.git
+/.qmake
 /.vscode
 /Content
 /DeathWorld.git
 /DerivedDataCache
 /Intermediate
 /Saved
-/Plugins/Plugins/MultiplayerPlugin/Content
-/Plugins/Plugins/MultiplayerPlugin/Intermediate
+/Plugins/MultiplayerPlugin/Content
+/Plugins/MultiplayerPlugin/Intermediate

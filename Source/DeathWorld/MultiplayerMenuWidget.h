@@ -9,15 +9,20 @@
 /**
  * 
  */
+
+
+
 UCLASS()
-class DEATHWORLD_API UMultiplayerMenuWidget : public UUserWidget
+class DEATHWORLD_API UMultiplayerMenuWidget : public UMainMenuWidget
 {
 	GENERATED_BODY()
 
 public:
 
+
     virtual void NativeConstruct() override;
-    void MultiplayerMenuSetup();
+
+    virtual void MenuSetup();
   
     void BindButtonEvents();
 
@@ -29,21 +34,24 @@ public:
 
     UFUNCTION()
     void OnBackClicked();
+
+protected:
+
 	
 private:
-
 
     // create pointer to OnlinePlugin class to access necessary funtion
     UPROPERTY(meta = (BindWidget))
     class UButton* HostButton;
-
 
     UPROPERTY(meta = (BindWidget))
     class UButton* JoinButton;
 
     UPROPERTY(meta = (BindWidget))
     class UButton* BackButton;
-    
+
     class UMultiplayerSessions* multiplayerSessionPtr; // pointer to custom mutliplayer plugin class
+
+
 
 };

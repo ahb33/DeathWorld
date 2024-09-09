@@ -15,11 +15,23 @@ UMultiplayerSessions::UMultiplayerSessions() : CreateSessionCompleteDelegate(FOn
 
     IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get(); // Get() retreives Get the online subsystem for a given service
 
-    if(Subsystem)
+    if (Subsystem)
     {
         sessionInterface = Subsystem->GetSessionInterface();
-    }
 
+        if (sessionInterface)
+        {
+            // Perform additional setup if necessary
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Session Interface is not valid."));
+        }
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Online Subsystem is not valid."));
+    }
 
 }
 

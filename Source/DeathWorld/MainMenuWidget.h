@@ -4,19 +4,20 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "BaseMenuWidget.h"
 #include "MainMenuWidget.generated.h"
 
 /**
  * 
  */
+
 UCLASS()
-class DEATHWORLD_API UMainMenuWidget : public UUserWidget
+class DEATHWORLD_API UMainMenuWidget : public UBaseMenuWidget
 {
 	GENERATED_BODY()
 	
 protected:
     virtual void NativeConstruct() override;
-
 
 public:
 
@@ -50,15 +51,15 @@ public:
 
 protected:
 
-    UPROPERTY(meta = (BindWidget))
+    UPROPERTY(meta = (BindWidget, OptionalWidget = true))
 	class UButton* SoloButton;
 
-    UPROPERTY(meta = (BindWidget))
+    UPROPERTY(meta = (BindWidget, OptionalWidget = true))
 	class UButton* MultiplayerButton;
 
-    class AMy_PlayerController* playerController;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
-    TArray<TSubclassOf<UUserWidget>> menuWidgetClasses;
+private:
+    
+    UBaseMenuWidget* baseMenuPtr;
+    void BindButton(UButton* Button, void (UMainMenuWidget::*Func)());
 
 };

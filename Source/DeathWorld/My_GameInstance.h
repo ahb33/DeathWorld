@@ -21,10 +21,18 @@ class DEATHWORLD_API UMy_GameInstance : public UGameInstance
 	GENERATED_BODY()
 
 public:
+
+    
 	AMy_PlayerController* GetPlayerController() const { return playerController; }
     void SetPlayerController(AMy_PlayerController* Controller) { playerController = Controller; }
+
+
+protected:
+
 
 private:
     UPROPERTY()
     AMy_PlayerController* playerController;	
+
+
 };
