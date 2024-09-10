@@ -11,30 +11,7 @@ void UMultiplayerMenuWidget::NativeConstruct()
 {
     Super::NativeConstruct();
     
-    if (multiplayerMenuWidgetClass)
-    {
-        Super::CreateAndStoreWidget("MultiplayerMenu", multiplayerMenuWidgetClass);
-        UE_LOG(LogTemp, Log, TEXT("MultiplayerMenu widget created and stored."));
-    }
-    else
-    {
-        UE_LOG(LogTemp, Error, TEXT("multiplayerMenuWidgetClass is not set."));
-    }
-    // Only bind multiplayer menu buttons
-    if (HostButton)
-    {
-        HostButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnHostClicked);
-    }
-
-    if (JoinButton)
-    {
-        JoinButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnJoinClicked);
-    }
-
-    if (BackButton)
-    {
-        BackButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnBackClicked);
-    }
+    BindButtonEvents();
 }
 
 void UMultiplayerMenuWidget::MenuSetup()
@@ -86,29 +63,20 @@ void UMultiplayerMenuWidget::OnJoinClicked()
 
 void UMultiplayerMenuWidget::OnBackClicked()
 {
-
-    RemoveFromParent();
-    // Ensure widget creation before attempting transition
     FName MainMenu = "MainMenu";
 
-    if (!menuWidgetMap.Contains(MainMenu))
+    // Check if MainMenu is already stored in the map
+    if (menuWidgetMap.Contains(MainMenu))
     {
+        // Transition to the existing instance in the map
+        TransitionToMenu(MainMenu);
+    }
+    else
+    {
+        // Create the MainMenu widget only if it's not in the map
         UE_LOG(LogTemp, Log, TEXT("Creating MainMenu widget."));
         Super::CreateAndStoreWidget(MainMenu, mainMenuWidgetClass);
-    }
-    
-    TransitionToMenu(MainMenu);
-
-    
-    // Ensure input is correctly focused on the Main Menu
-    if (playerController)
-    {
-        FInputModeUIOnly InputModeData;
-        InputModeData.SetWidgetToFocus(menuWidgetMap[MainMenu]->TakeWidget());
-        InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-
-        playerController->SetInputMode(InputModeData);
-        playerController->bShowMouseCursor = true;
+        TransitionToMenu(MainMenu);  // Transition after creation
     }
 }
 

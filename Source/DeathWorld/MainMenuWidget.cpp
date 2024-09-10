@@ -11,18 +11,12 @@ void UMainMenuWidget::NativeConstruct()
     Super::NativeConstruct();
     // Only create the widget instance if it's not already in the array
 
-    // // Calling the parent's version of CreateAndStoreWidget directly using Super
-    // Super::CreateAndStoreWidget("MainMenu", mainMenuWidgetClass);
+    UE_LOG(LogTemp, Warning, TEXT("MainMenu native construct called"));
 
-    InitializePlayerController();
-    SetupInputMode();
+    MenuSetup();
+
 }
 
-void UMainMenuWidget::InitializePlayerController()
-{
-    // Retrieve the PlayerController directly from the owning player
-    playerController = Cast<AMy_PlayerController>(GetOwningPlayer());
-}
 
 void UMainMenuWidget::MenuSetup()
 {
@@ -74,8 +68,7 @@ void UMainMenuWidget::OnMultiplayerClicked()
         UE_LOG(LogTemp, Log, TEXT("Creating MultiplayerMenu widget."));
         Super::CreateAndStoreWidget(MultiplayerMenu, multiplayerMenuWidgetClass);
     }
-    
-    RemoveFromParent();
+
     TransitionToMenu(MultiplayerMenu);
 }
 

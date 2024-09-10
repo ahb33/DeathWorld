@@ -42,8 +42,6 @@ public:
     UFUNCTION()
     void OnMultiplayerClicked(); 
 
-    void InitializePlayerController();
-
     void SetupInputMode();
 
     void BindButtonEvents();

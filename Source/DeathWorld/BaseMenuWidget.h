@@ -21,11 +21,7 @@ protected:
     // Create and store the widget
     void CreateAndStoreWidget(FName MenuName, TSubclassOf<UUserWidget> WidgetClass);
 
-    // Get the widget class for a specific menu
-    virtual TSubclassOf<UUserWidget> GetWidgetClassForMenu(FName MenuName);
-
     class AMy_PlayerController* playerController;
-
 
 public:
     virtual void TransitionToMenu(FName MenuName);

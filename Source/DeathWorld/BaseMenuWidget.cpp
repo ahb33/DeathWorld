@@ -11,78 +11,34 @@ void UBaseMenuWidget::NativeConstruct()
 {
     Super::NativeConstruct();
 
+    UE_LOG(LogTemp, Warning, TEXT("Base Menu NativeConstruct() called"));
 
 }
-
-// void UBaseMenuWidget::TransitionToMenu(FName MenuName)
-// {
-//     UE_LOG(LogTemp, Warning, TEXT("TransitionToMenu called"));
-    
-//     // Store the result of the Find operation in a pointer to reduce redundant code
-//     TSubclassOf<UUserWidget>* MenuClass = menuWidgetMap.Find(MenuName);
-    
-//     // Check if the MenuClass was found
-//     if (MenuClass)
-//     {
-//         UUserWidget* NextMenu = CreateWidget<UUserWidget>(GetWorld(), *MenuClass);
-//         if (NextMenu)
-//         {
-//             NextMenu->AddToViewport();
-//             UE_LOG(LogTemp, Warning, TEXT("Successfully transitioned to: %s"), *MenuName.ToString());
-//         }
-//         else
-//         {
-//             UE_LOG(LogTemp, Error, TEXT("Failed to create widget for menu: %s"), *MenuName.ToString());
-//         }
-//     }
-//     else
-//     {
-//         UE_LOG(LogTemp, Error, TEXT("Menu %s not found in map!"), *MenuName.ToString());
-//     }
-// }
 
 void UBaseMenuWidget::TransitionToMenu(FName MenuName)
 {
-    UUserWidget** FoundWidget = menuWidgetMap.Find(MenuName);
-    if (FoundWidget && *FoundWidget)
+    // Check if the widget is already created and stored
+    if (UUserWidget** FoundWidget = menuWidgetMap.Find(MenuName))
     {
-        (*FoundWidget)->AddToViewport();
-        UE_LOG(LogTemp, Log, TEXT("Transitioned to %s"), *MenuName.ToString());
-        return;
+        if (*FoundWidget)
+        {
+            // Remove the current widget and display the new one
+            RemoveFromViewport();  // Ensure removal from the viewport
+            (*FoundWidget)->AddToViewport();  // Add the found widget to the viewport
+            SetupInputMode();  // Set input mode for the new widget
+            return;
+        }
     }
 
-    TSubclassOf<UUserWidget> WidgetClass = GetWidgetClassForMenu(MenuName);
-    if (!WidgetClass)
-    {
-        UE_LOG(LogTemp, Error, TEXT("No Widget Class found for %s"), *MenuName.ToString());
-        return;
-    }
-
-    CreateAndStoreWidget(MenuName, WidgetClass);
-    menuWidgetMap[MenuName]->AddToViewport();
-    UE_LOG(LogTemp, Log, TEXT("Created and transitioned to %s"), *MenuName.ToString());
-
-    SetupInputMode();  // Ensure input mode is set after transitioning
+    UE_LOG(LogTemp, Error, TEXT("Widget for %s not found in map!"), *MenuName.ToString());
 }
 
-TSubclassOf<UUserWidget> UBaseMenuWidget::GetWidgetClassForMenu(FName MenuName)
-{
-    if (MenuName == "MainMenu")
-    {
-        return mainMenuWidgetClass;  // Define this subclass elsewhere
-    }
-    else if (MenuName == "MultiplayerMenu")
-    {
-        return multiplayerMenuWidgetClass;  // Define this subclass elsewhere
-    }
-
-    // Add more menu checks as needed
-    return nullptr;  // If no matching widget class is found
-}
 
 
 void UBaseMenuWidget::CreateAndStoreWidget(FName MenuName, TSubclassOf<UUserWidget> WidgetClass)
 {
+    UE_LOG(LogTemp, Warning, TEXT("CreateAndStoreWidget called"));
+    
     if (WidgetClass && !menuWidgetMap.Contains(MenuName))
     {
         UUserWidget* NewWidget = CreateWidget<UUserWidget>(GetWorld(), WidgetClass);
