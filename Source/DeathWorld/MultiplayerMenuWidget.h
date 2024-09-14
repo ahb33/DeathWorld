@@ -27,13 +27,13 @@ public:
     void BindButtonEvents();
 
     UFUNCTION()
-    void OnHostClicked();
+    void OnHostButtonClicked();
 
     UFUNCTION()
-    void OnJoinClicked();
+    void OnJoinButtonClicked();
 
     UFUNCTION()
-    void OnBackClicked();
+    void OnBackButtonClicked();
 
 protected:
 
@@ -51,7 +51,5 @@ private:
     class UButton* BackButton;
 
     class UMultiplayerSessions* multiplayerSessionPtr; // pointer to custom mutliplayer plugin class
-
-
 
 };

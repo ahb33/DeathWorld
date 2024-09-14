@@ -3,7 +3,6 @@
 #include "Blueprint/UserWidget.h"
 #include "My_PlayerController.h"
 #include "MultiplayerMenuWidget.h"
-#include "Components/Button.h"
 #include "Kismet/GameplayStatics.h"
 
 void UMainMenuWidget::NativeConstruct()
@@ -14,28 +13,16 @@ void UMainMenuWidget::NativeConstruct()
     UE_LOG(LogTemp, Warning, TEXT("MainMenu native construct called"));
 
     MenuSetup();
-
 }
 
 
 void UMainMenuWidget::MenuSetup()
 {
     Super::MenuSetup();
+    
     BindButtonEvents();
 }
 
-void UMainMenuWidget::SetupInputMode()
-{
-    if (playerController)
-    {
-        FInputModeUIOnly InputModeData;
-        InputModeData.SetWidgetToFocus(TakeWidget());
-        InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-        
-        playerController->SetInputMode(InputModeData);
-        playerController->bShowMouseCursor = true;
-    }
-}
 
 // Ensure that buttons are valid and not already bound to prevent multiple bindings.
 void UMainMenuWidget::BindButtonEvents()
@@ -63,10 +50,12 @@ void UMainMenuWidget::OnMultiplayerClicked()
     // Ensure widget creation before attempting transition
     FName MultiplayerMenu = "MultiplayerMenu";
 
+    auto multiplayerMenuWidgetRef = GetMultiplayerMenuWidgetClass();
+
     if (!menuWidgetMap.Contains(MultiplayerMenu))
     {
         UE_LOG(LogTemp, Log, TEXT("Creating MultiplayerMenu widget."));
-        Super::CreateAndStoreWidget(MultiplayerMenu, multiplayerMenuWidgetClass);
+        Super::CreateAndStoreWidget(MultiplayerMenu, multiplayerMenuWidgetRef);
     }
 
     TransitionToMenu(MultiplayerMenu);

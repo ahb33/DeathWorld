@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "BaseMenuWidget.h"
+#include "Components/Button.h"
 #include "MainMenuWidget.generated.h"
 
 /**
@@ -42,10 +43,7 @@ public:
     UFUNCTION()
     void OnMultiplayerClicked(); 
 
-    void SetupInputMode();
-
     void BindButtonEvents();
-
 
 protected:
 
@@ -54,10 +52,5 @@ protected:
 
     UPROPERTY(meta = (BindWidget, OptionalWidget = true))
 	class UButton* MultiplayerButton;
-
-private:
-    
-    UBaseMenuWidget* baseMenuPtr;
-    void BindButton(UButton* Button, void (UMainMenuWidget::*Func)());
 
 };

@@ -4,14 +4,53 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "MainMenuWidget.h"
 #include "SoloMenuWidget.generated.h"
+
+
 
 /**
  * 
  */
 UCLASS()
-class DEATHWORLD_API USoloMenuWidget : public UUserWidget
+class DEATHWORLD_API USoloMenuWidget : public UMainMenuWidget
 {
 	GENERATED_BODY()
+
+/*
+
+	buttons for difficult set here
+	access gamemode class that does so
+*/
+protected:
+    virtual void NativeConstruct() override;
+
+public:
+
+    virtual void MenuSetup();
+  
+    void BindButtonEvents();
+
+    UFUNCTION()
+    void OnHardButtonClicked();
+
+    UFUNCTION()
+    void OnMediumButtonClicked();
+
+    UFUNCTION()
+    void OnEasyButtonClicked();
+
+
+
+private:
+
+    UPROPERTY(meta = (BindWidget))
+	class UButton* EasyButton;
+
+    UPROPERTY(meta = (BindWidget))
+	class UButton* MediumButton;
+
+	UPROPERTY(meta = (BindWidget))
+	class UButton* HardButton;
 	
 };

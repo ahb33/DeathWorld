@@ -3,7 +3,6 @@
 
 #include "MultiplayerMenuWidget.h"
 #include "MultiplayerSessions.h"
-#include "Components/Button.h"
 #include "My_GameInstance.h"
 
 
@@ -11,43 +10,41 @@ void UMultiplayerMenuWidget::NativeConstruct()
 {
     Super::NativeConstruct();
     
-    BindButtonEvents();
+    MenuSetup();
 }
 
 void UMultiplayerMenuWidget::MenuSetup()
 {
     Super::MenuSetup();
-    BindButtonEvents();
-
-    
+    BindButtonEvents(); 
 }
 
 
 void UMultiplayerMenuWidget::BindButtonEvents()
 {
     // Check if HostButton is valid and not already bound and then bind it to OnHostClicked
-    if (HostButton && !HostButton->OnClicked.IsAlreadyBound(this, &UMultiplayerMenuWidget::OnHostClicked))
+    if (HostButton && !HostButton->OnClicked.IsAlreadyBound(this, &UMultiplayerMenuWidget::OnHostButtonClicked))
     {
-        HostButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnHostClicked);
+        HostButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnHostButtonClicked);
     }
 
     // Check if MultiplayerButton is valid and not already bound and then bind it to OnMultiplayerClicked
-    if (JoinButton && !JoinButton->OnClicked.IsAlreadyBound(this, &UMultiplayerMenuWidget::OnJoinClicked))
+    if (JoinButton && !JoinButton->OnClicked.IsAlreadyBound(this, &UMultiplayerMenuWidget::OnJoinButtonClicked))
     {
-        JoinButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnJoinClicked);
+        JoinButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnJoinButtonClicked);
     }
 
     // Check if BackButton is valid and not already bound and then bind it to OnMultiplayerClicked
-    if(BackButton && !BackButton->OnClicked.IsAlreadyBound(this, &UMultiplayerMenuWidget::OnBackClicked))
+    if(BackButton && !BackButton->OnClicked.IsAlreadyBound(this, &UMultiplayerMenuWidget::OnBackButtonClicked))
     {
-        BackButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnBackClicked);
+        BackButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnBackButtonClicked);
     }
 
 }
 
 
 
-void UMultiplayerMenuWidget::OnHostClicked()
+void UMultiplayerMenuWidget::OnHostButtonClicked()
 {
     // clicking host should create a session
     if(multiplayerSessionPtr)
@@ -56,28 +53,27 @@ void UMultiplayerMenuWidget::OnHostClicked()
     }
 }
 
-void UMultiplayerMenuWidget::OnJoinClicked()
+void UMultiplayerMenuWidget::OnJoinButtonClicked()
 {
 
 }
 
-void UMultiplayerMenuWidget::OnBackClicked()
+void UMultiplayerMenuWidget::OnBackButtonClicked()
 {
+    UE_LOG(LogTemp, Warning, TEXT("MainMenuClicked"));
+    // Ensure widget creation before attempting transition
+
     FName MainMenu = "MainMenu";
 
-    // Check if MainMenu is already stored in the map
-    if (menuWidgetMap.Contains(MainMenu))
+    auto mainMenuWidgetRef = GetMainMenuWidgetClass();
+
+    if (!menuWidgetMap.Contains(MainMenu))
     {
-        // Transition to the existing instance in the map
-        TransitionToMenu(MainMenu);
+        UE_LOG(LogTemp, Log, TEXT("Creating MultiplayerMenu widget."));
+        Super::CreateAndStoreWidget(MainMenu, mainMenuWidgetRef);
     }
-    else
-    {
-        // Create the MainMenu widget only if it's not in the map
-        UE_LOG(LogTemp, Log, TEXT("Creating MainMenu widget."));
-        Super::CreateAndStoreWidget(MainMenu, mainMenuWidgetClass);
-        TransitionToMenu(MainMenu);  // Transition after creation
-    }
+
+    TransitionToMenu(MainMenu);
 }
 
  

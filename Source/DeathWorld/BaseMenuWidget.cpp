@@ -23,7 +23,7 @@ void UBaseMenuWidget::TransitionToMenu(FName MenuName)
         if (*FoundWidget)
         {
             // Remove the current widget and display the new one
-            RemoveFromViewport();  // Ensure removal from the viewport
+            RemoveFromParent();  // Ensure removal from the viewport
             (*FoundWidget)->AddToViewport();  // Add the found widget to the viewport
             SetupInputMode();  // Set input mode for the new widget
             return;
@@ -52,7 +52,17 @@ void UBaseMenuWidget::CreateAndStoreWidget(FName MenuName, TSubclassOf<UUserWidg
 
 void UBaseMenuWidget::MenuSetup()
 {
-    AddToViewport();
+    // Check if the widget is already in the viewport
+    if (!IsInViewport())
+    {
+        AddToViewport();
+        SetupInputMode();  // Ensure input mode is set
+        UE_LOG(LogTemp, Warning, TEXT("BaseMenu added to viewport"));
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("BaseMenu is already in the viewport, skipping AddToViewport"));
+    }
 }
 
 void UBaseMenuWidget::SetupInputMode()
@@ -67,4 +77,6 @@ void UBaseMenuWidget::SetupInputMode()
         playerController->bShowMouseCursor = true;
     }
 }
+
+
 
