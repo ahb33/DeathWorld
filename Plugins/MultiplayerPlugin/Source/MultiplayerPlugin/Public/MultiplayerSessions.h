@@ -4,12 +4,24 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "Templates/SharedPointer.h"
 #include "Interfaces/OnlineSessionInterface.h"
+#include "OnlineSessionSettings.h"
 #include "MultiplayerSessions.generated.h"
 
 /**
- * 
- */
+
+*/
+
+// menus will call these delegates from their own games
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnCreateSessionComplete, bool, bWasSuccessful);
+DECLARE_MULTICAST_DELEGATE_TwoParams(FMultiplayerOnFindSessionComplete, const TArray<FOnlineSessionSearchResult>& SessionResults, bool bWasSuccessful);
+DECLARE_MULTICAST_DELEGATE_OneParam(FMultiplayerOnJoinSessionComplete, EOnJoinSessionCompleteResult::Type Result);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnStartSessionComplete, bool, bWasSuccessful);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnDestroySessionComplete, bool, bWasSuccessful);
+
+
+
 UCLASS()
 class MULTIPLAYERPLUGIN_API UMultiplayerSessions : public UGameInstanceSubsystem
 {
@@ -51,6 +63,15 @@ public:
 	// Destroy session
 	void DestroySession();
 
+	void OnStartSessionComplete(FName SessionName, bool bWasSuccessful);
+
+	void InitSubsystem();
+
+	FMultiplayerOnCreateSessionComplete MultiplayerOnCreateSessionComplete;
+	FMultiplayerOnFindSessionComplete MultiplayerOnFindSessionComplete;
+	FMultiplayerOnJoinSessionComplete MultiplayerOnJoinSessionComplete;
+	FMultiplayerOnDestroySessionComplete MultiplayerOnDestroySessionComplete;
+	FMultiplayerOnStartSessionComplete MultiplayerOnStartSessionComplete;
 
 protected: 
 
@@ -62,7 +83,6 @@ protected:
 
 	void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
 
-	void OnStartSessionComplete(FName SessionName, bool bWasSuccessful);
 
 
 private:
@@ -70,6 +90,8 @@ private:
 	
 	// Online sybstystem session interface
 	IOnlineSessionPtr sessionInterface;
+
+	TSharedPtr<FOnlineSessionSettings> sessionSettings;
 
 	/**
 		* Delegate fired when a session create request has completed

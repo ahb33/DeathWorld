@@ -6,7 +6,7 @@
 		},
 		{
 			"name": "UE5",
-			"path": "C:\\Program Files\\Epic Games\\UE_5.3"
+			"path": "C:\\Program Files\\Epic Games\\UE_5.4"
 		}
 	],
 	"settings": {
@@ -30,13 +30,13 @@
 					"DeathWorld",
 					"Win64",
 					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -47,7 +47,7 @@
 					"DeathWorld",
 					"Win64",
 					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -56,7 +56,7 @@
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -67,13 +67,13 @@
 					"DeathWorld",
 					"Win64",
 					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -84,13 +84,13 @@
 					"DeathWorld",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -101,7 +101,7 @@
 					"DeathWorld",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -110,7 +110,7 @@
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -121,13 +121,13 @@
 					"DeathWorld",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -138,13 +138,13 @@
 					"DeathWorld",
 					"Win64",
 					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -155,7 +155,7 @@
 					"DeathWorld",
 					"Win64",
 					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -164,7 +164,7 @@
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -175,13 +175,13 @@
 					"DeathWorld",
 					"Win64",
 					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -192,13 +192,13 @@
 					"DeathWorld",
 					"Win64",
 					"Test",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -209,7 +209,7 @@
 					"DeathWorld",
 					"Win64",
 					"Test",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -218,7 +218,7 @@
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -229,13 +229,13 @@
 					"DeathWorld",
 					"Win64",
 					"Test",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -246,13 +246,13 @@
 					"DeathWorld",
 					"Win64",
 					"Shipping",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -263,7 +263,7 @@
 					"DeathWorld",
 					"Win64",
 					"Shipping",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -272,7 +272,7 @@
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -283,283 +283,13 @@
 					"DeathWorld",
 					"Win64",
 					"Shipping",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Debug Build",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Debug Rebuild",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"DeathWorld IOS Debug Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Debug Clean",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS DebugGame Build",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS DebugGame Rebuild",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"DeathWorld IOS DebugGame Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS DebugGame Clean",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Development Build",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Development Rebuild",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"DeathWorld IOS Development Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Development Clean",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Test Build",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Test",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Test Rebuild",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Test",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"DeathWorld IOS Test Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Test Clean",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Test",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Shipping Build",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Shipping",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Shipping Rebuild",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Build.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Shipping",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"DeathWorld IOS Shipping Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
-				}
-			},
-			{
-				"label": "DeathWorld IOS Shipping Clean",
-				"group": "build",
-				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
-				"args": [
-					"DeathWorld",
-					"IOS",
-					"Shipping",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -570,13 +300,13 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -587,7 +317,7 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -596,7 +326,7 @@
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -607,13 +337,13 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Debug",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -624,13 +354,13 @@
 					"DeathWorldEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -641,7 +371,7 @@
 					"DeathWorldEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -650,7 +380,7 @@
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -661,13 +391,13 @@
 					"DeathWorldEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -678,13 +408,13 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -695,7 +425,7 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -704,7 +434,7 @@
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -715,13 +445,13 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Development",
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			}
 		]
@@ -732,132 +462,132 @@
 			{
 				"name": "Launch DeathWorld (Debug)",
 				"request": "launch",
-				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
 				"preLaunchTask": "DeathWorld Win64 Debug Build",
 				"args": [
 				],
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"type": "cppvsdbg",
-				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
 				"sourceFileMap": {
-					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
 				"name": "Launch DeathWorld (DebugGame)",
 				"request": "launch",
-				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
 				"preLaunchTask": "DeathWorld Win64 DebugGame Build",
 				"args": [
 				],
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"type": "cppvsdbg",
-				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
 				"sourceFileMap": {
-					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
 				"name": "Launch DeathWorld (Development)",
 				"request": "launch",
-				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Binaries\\Win64\\UnrealGame.exe",
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame.exe",
 				"preLaunchTask": "DeathWorld Win64 Development Build",
 				"args": [
 				],
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"type": "cppvsdbg",
-				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
 				"sourceFileMap": {
-					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
 				"name": "Launch DeathWorld (Test)",
 				"request": "launch",
-				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
 				"preLaunchTask": "DeathWorld Win64 Test Build",
 				"args": [
 				],
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"type": "cppvsdbg",
-				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
 				"sourceFileMap": {
-					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
 				"name": "Launch DeathWorld (Shipping)",
 				"request": "launch",
-				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
 				"preLaunchTask": "DeathWorld Win64 Shipping Build",
 				"args": [
 				],
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"type": "cppvsdbg",
-				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
 				"sourceFileMap": {
-					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
 				"name": "Launch DeathWorldEditor (Debug)",
 				"request": "launch",
-				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 				"preLaunchTask": "DeathWorldEditor Win64 Debug Build",
 				"args": [
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject"
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
 				],
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"type": "cppvsdbg",
-				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
 				"sourceFileMap": {
-					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
 				"name": "Launch DeathWorldEditor (DebugGame)",
 				"request": "launch",
-				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 				"preLaunchTask": "DeathWorldEditor Win64 DebugGame Build",
 				"args": [
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject"
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
 				],
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"type": "cppvsdbg",
-				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
 				"sourceFileMap": {
-					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
 				"name": "Launch DeathWorldEditor (Development)",
 				"request": "launch",
-				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 				"preLaunchTask": "DeathWorldEditor Win64 Development Build",
 				"args": [
-					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject"
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
 				],
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"type": "cppvsdbg",
-				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
 				"sourceFileMap": {
-					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.4"
 				}
 			},
 			{
@@ -865,18 +595,18 @@
 				"type": "coreclr",
 				"request": "launch",
 				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
-				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Build\\BatchFiles\\RunUBT.bat",
 				"args": [
 					"-projectfiles",
 					"-vscode",
-					"-project=C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld\\DeathWorld.uproject",
+					"-project=C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
 					"-game",
 					"-engine",
 					"-dotnet"
 				],
-				"console": "externalTerminal",
+				"console": "integratedTerminal",
 				"stopAtEntry": false,
-				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4"
 			}
 		]
 	}

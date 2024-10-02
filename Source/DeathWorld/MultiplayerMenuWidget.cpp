@@ -2,7 +2,6 @@
 
 
 #include "MultiplayerMenuWidget.h"
-#include "MultiplayerSessions.h"
 #include "My_GameInstance.h"
 
 
@@ -17,6 +16,34 @@ void UMultiplayerMenuWidget::MenuSetup()
 {
     Super::MenuSetup();
     BindButtonEvents(); 
+
+    UGameInstance* GameInstance = GetGameInstance();
+    if (GameInstance)
+    {
+        multiplayerSessionPtr = GameInstance->GetSubsystem<UMultiplayerSessions>();
+    
+    }
+
+    if(multiplayerSessionPtr)
+    {
+        // For dynamic multicast delegates (AddDynamic and RemoveDynamic):
+        multiplayerSessionPtr->MultiplayerOnCreateSessionComplete.RemoveDynamic(this, &ThisClass::OnCreateSession);
+        multiplayerSessionPtr->MultiplayerOnCreateSessionComplete.AddDynamic(this, &ThisClass::OnCreateSession);
+
+        // For non-dynamic multicast delegates (AddUObject and Clear):
+        multiplayerSessionPtr->MultiplayerOnFindSessionComplete.Clear();  // Clear all bindings
+        multiplayerSessionPtr->MultiplayerOnFindSessionComplete.AddUObject(this, &UMultiplayerMenuWidget::OnFindSessions);
+
+        multiplayerSessionPtr->MultiplayerOnJoinSessionComplete.Clear();  // Clear all bindings
+        multiplayerSessionPtr->MultiplayerOnJoinSessionComplete.AddUObject(this, &UMultiplayerMenuWidget::OnJoinSession);
+
+        // For dynamic multicast delegates (AddDynamic and RemoveDynamic):
+        multiplayerSessionPtr->MultiplayerOnDestroySessionComplete.RemoveDynamic(this, &UMultiplayerMenuWidget::OnDestroySession);
+        multiplayerSessionPtr->MultiplayerOnDestroySessionComplete.AddDynamic(this, &UMultiplayerMenuWidget::OnDestroySession);
+
+        multiplayerSessionPtr->MultiplayerOnStartSessionComplete.RemoveDynamic(this, &UMultiplayerMenuWidget::OnStartSession);
+        multiplayerSessionPtr->MultiplayerOnStartSessionComplete.AddDynamic(this, &UMultiplayerMenuWidget::OnStartSession);
+    }
 }
 
 
@@ -39,14 +66,14 @@ void UMultiplayerMenuWidget::BindButtonEvents()
     {
         BackButton->OnClicked.AddDynamic(this, &UMultiplayerMenuWidget::OnBackButtonClicked);
     }
-
 }
-
-
 
 void UMultiplayerMenuWidget::OnHostButtonClicked()
 {
-    // clicking host should create a session
+    // clicking host should take you to separate menu to select game mode 
+    // Death match
+    // battle royale
+
     if(multiplayerSessionPtr)
     {
         multiplayerSessionPtr->CreateSession(4, FString("FreeForAll"));
@@ -76,4 +103,32 @@ void UMultiplayerMenuWidget::OnBackButtonClicked()
     TransitionToMenu(MainMenu);
 }
 
- 
+void UMultiplayerMenuWidget::OnCreateSession(bool bWasSuccessful)
+{
+    if(bWasSuccessful)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Session created successfully"));
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Session not created successfully"));
+    }
+    // travel to lobby
+}
+
+
+void UMultiplayerMenuWidget::OnFindSessions(const TArray<FOnlineSessionSearchResult> &SessionResults, bool bWasSuccessful)
+{
+}
+
+void UMultiplayerMenuWidget::OnJoinSession(EOnJoinSessionCompleteResult::Type Result)
+{
+}
+
+void UMultiplayerMenuWidget::OnDestroySession(bool bWasSuccessful)
+{
+}
+
+void UMultiplayerMenuWidget::OnStartSession(bool bWasSuccessful)
+{
+}

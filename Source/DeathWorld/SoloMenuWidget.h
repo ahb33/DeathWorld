@@ -40,6 +40,9 @@ public:
     UFUNCTION()
     void OnEasyButtonClicked();
 
+    UFUNCTION()
+    void OnBackButtonClicked();
+
 
 
 private:
@@ -52,5 +55,8 @@ private:
 
 	UPROPERTY(meta = (BindWidget))
 	class UButton* HardButton;
+
+    UPROPERTY(meta = (BindWidget))
+	class UButton* BackButton;
 	
 };

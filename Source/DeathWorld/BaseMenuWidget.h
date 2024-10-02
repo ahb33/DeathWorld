@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "My_PlayerController.h"
+#include "MyPlayerController.h"
 #include "BaseMenuWidget.generated.h"
 
 /**
@@ -21,7 +21,7 @@ protected:
     // Create and store the widget
     void CreateAndStoreWidget(FName MenuName, TSubclassOf<UUserWidget> WidgetClass);
 
-    class AMy_PlayerController* playerController;
+    class AMyPlayerController* playerController;
 
 public:
 

@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "MainMenuWidget.h"
+#include "MultiplayerSessions.h"
+#include "OnlineSessionSettings.h"
 #include "MultiplayerMenuWidget.generated.h"
 
 /**
@@ -35,7 +37,22 @@ public:
     UFUNCTION()
     void OnBackButtonClicked();
 
+    UFUNCTION()
+    void OnCreateSession(bool bWasSuccessful);
+
+    void OnFindSessions(const TArray<FOnlineSessionSearchResult>& SessionResults, bool bWasSuccessful);
+
+	void OnJoinSession(EOnJoinSessionCompleteResult::Type Result);
+
+	UFUNCTION()
+	void OnDestroySession(bool bWasSuccessful);
+
+	UFUNCTION()
+	void OnStartSession(bool bWasSuccessful);
+
 protected:
+
+
 
 	
 private:

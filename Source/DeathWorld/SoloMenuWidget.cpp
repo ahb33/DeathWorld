@@ -2,6 +2,8 @@
 
 
 #include "SoloMenuWidget.h"
+#include "Kismet/GameplayStatics.h"
+
 
 void USoloMenuWidget::NativeConstruct()
 {
@@ -33,10 +35,22 @@ void USoloMenuWidget::BindButtonEvents()
     {
         HardButton->OnClicked.AddDynamic(this, &USoloMenuWidget::OnHardButtonClicked);
     }
+
+    // Check if HardButton is valid and not already bound and then bind it to OnBackButtonClicked
+    if(BackButton && !BackButton->OnClicked.IsAlreadyBound(this, &USoloMenuWidget::OnBackButtonClicked))
+    {
+        BackButton->OnClicked.AddDynamic(this, &USoloMenuWidget::OnBackButtonClicked);
+    }
 }
 
 void USoloMenuWidget::OnEasyButtonClicked()
 {
+    /*
+        code to play based on difficulty added later on 
+    */
+
+    // Transition to the Solo Level with specific GameMode
+    UGameplayStatics::OpenLevel(this, FName("SoloLevel"));  
 
 }
 
@@ -47,5 +61,25 @@ void USoloMenuWidget::OnMediumButtonClicked()
 
 void USoloMenuWidget::OnHardButtonClicked()
 {
+
+}
+
+void USoloMenuWidget::OnBackButtonClicked()
+{
+
+    UE_LOG(LogTemp, Warning, TEXT("MainMenuClicked"));
+    // Ensure widget creation before attempting transition
+
+    FName MainMenu = "MainMenu";
+
+    auto mainMenuWidgetRef = GetMainMenuWidgetClass();
+
+    if (!menuWidgetMap.Contains(MainMenu))
+    {
+        UE_LOG(LogTemp, Log, TEXT("Creating MultiplayerMenu widget."));
+        Super::CreateAndStoreWidget(MainMenu, mainMenuWidgetRef);
+    }
+
+    TransitionToMenu(MainMenu);
 
 }

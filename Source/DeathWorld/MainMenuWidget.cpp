@@ -1,9 +1,8 @@
 
 #include "MainMenuWidget.h"
 #include "Blueprint/UserWidget.h"
-#include "My_PlayerController.h"
+#include "MyPlayerController.h"
 #include "MultiplayerMenuWidget.h"
-#include "Kismet/GameplayStatics.h"
 
 void UMainMenuWidget::NativeConstruct()
 {
@@ -40,8 +39,19 @@ void UMainMenuWidget::BindButtonEvents()
 
 void UMainMenuWidget::OnSoloClicked()
 {
-    // Transition to the Solo Level with specific GameMode
-    UGameplayStatics::OpenLevel(this, FName("SoloLevel"));  
+    UE_LOG(LogTemp, Warning, TEXT("SoloButton Clicked"));
+    // Ensure widget creation before attempting transition
+    FName SoloMenu = "SoloMenu";
+
+    auto soloMenuWidgetRef = GetSoloMenuWidgetClass();
+
+    if (!menuWidgetMap.Contains(SoloMenu))
+    {
+        UE_LOG(LogTemp, Log, TEXT("Creating MultiplayerMenu widget."));
+        Super::CreateAndStoreWidget(SoloMenu, soloMenuWidgetRef);
+    }
+
+    TransitionToMenu(SoloMenu);
 }
 
 void UMainMenuWidget::OnMultiplayerClicked()

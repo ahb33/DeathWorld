@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
-#include "My_PlayerController.h"
+#include "MyPlayerController.h"
 #include "My_GameInstance.generated.h"
 
 
@@ -23,8 +23,8 @@ class DEATHWORLD_API UMy_GameInstance : public UGameInstance
 public:
 
     
-	AMy_PlayerController* GetPlayerController() const { return playerController; }
-    void SetPlayerController(AMy_PlayerController* Controller) { playerController = Controller; }
+	AMyPlayerController* GetPlayerController() const { return playerController; }
+    void SetPlayerController(AMyPlayerController* Controller) { playerController = Controller; }
 
 
 protected:
@@ -32,7 +32,7 @@ protected:
 
 private:
     UPROPERTY()
-    AMy_PlayerController* playerController;	
+    AMyPlayerController* playerController;	
 
 
 };

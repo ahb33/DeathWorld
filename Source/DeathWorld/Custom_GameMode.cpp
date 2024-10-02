@@ -9,7 +9,7 @@ ACustom_GameMode::ACustom_GameMode()
 {
     GameStateClass = AMy_GameState::StaticClass();
     PlayerStateClass = AGame_PlayerState::StaticClass();
-    PlayerControllerClass = AMy_PlayerController::StaticClass();
+    PlayerControllerClass = AMyPlayerController::StaticClass();
 
     static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/Blueprints/BP_MainCharacter"));
     

@@ -25,6 +25,7 @@ class DEATHWORLD_API IGame_Interactable
 
 public:
 
+
     /*
         remember Functions using the BlueprintCallable specifier can be called in C++ or Blueprint 
         using a reference to an object that implements the interface.
@@ -32,10 +33,10 @@ public:
     
     */
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction", meta=(DisplayName= "Interact"))
-    bool CanInteract(class AMainCharacter* CharacterInstigator);
+    bool CanInteract(class ABaseCharacter* CharacterInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction", meta=(DisplayName= "Interact"))
-    void Interact(class AMainCharacter* CharacterInstigator);
+    void Interact(class ABaseCharacter* CharacterInstigator);
 
 
 

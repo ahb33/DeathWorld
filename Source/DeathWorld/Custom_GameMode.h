@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameMode.h"
 #include "Game_PlayerState.h"
-#include "My_PlayerController.h"
+#include "MyPlayerController.h"
 #include "MainCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Custom_GameMode.generated.h"

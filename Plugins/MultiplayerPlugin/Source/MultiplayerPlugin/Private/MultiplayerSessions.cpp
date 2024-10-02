@@ -13,31 +13,153 @@ UMultiplayerSessions::UMultiplayerSessions() : CreateSessionCompleteDelegate(FOn
     // check if subsystem variable is valid
     // get session interface from subsystem variable and store in another variable
 
-    IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get(); // Get() retreives Get the online subsystem for a given service
+    UE_LOG(LogTemp, Warning, TEXT("UMultiplayerSessions Constructor Called"));
 
+    IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get();
     if (Subsystem)
     {
-        sessionInterface = Subsystem->GetSessionInterface();
-
-        if (sessionInterface)
-        {
-            // Perform additional setup if necessary
-        }
-        else
-        {
-            UE_LOG(LogTemp, Warning, TEXT("Session Interface is not valid."));
-        }
+        UE_LOG(LogTemp, Warning, TEXT("Using Online Subsystem: %s"), *Subsystem->GetSubsystemName().ToString());
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("Online Subsystem is not valid."));
+        UE_LOG(LogTemp, Error, TEXT("Online Subsystem is not valid."));
+        UE_LOG(LogTemp, Error, TEXT("Ensure that the OnlineSubsystemSteam is enabled in your project settings."));
     }
 
+    InitSubsystem();
+}
+
+void UMultiplayerSessions::InitSubsystem()
+{
+    IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get();
+    if (!Subsystem)
+    {
+        if (GEngine)
+        {
+            GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Failed to initialize Online Subsystem. Make sure Steam is running and the Steam subsystem is enabled."));
+        }
+        return;
+    }
+
+    FString SubsystemName = Subsystem->GetSubsystemName().ToString();
+    if (SubsystemName != "Steam")
+    {
+        if (GEngine)
+        {
+            GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::Printf(TEXT("Incorrect Online Subsystem. Expected: Steam, Found: %s"), *SubsystemName));
+        }
+        return;
+    }
+
+    sessionInterface = Subsystem->GetSessionInterface();
+    if (!sessionInterface.IsValid())
+    {
+        if (GEngine)
+        {
+            GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Failed to get Session Interface from Online Subsystem."));
+        }
+        return;
+    }
+
+    if (GEngine)
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Online Subsystem successfully initialized."));
+    }
+}
+/*
+    The function first checks if a session already exists and destroys it if needed to ensure we start with a clean slate.
+    sessionSettings are configured based on variables OnlinesessionSettings.h
+    then we call sessionInterface's create session function
+    finally, CreateSessionCompleteDelegate is bound to handle the session creation result, which will trigger the OnCreateSessionComplete callback.
+
+
+
+*/
+void UMultiplayerSessions::CreateSession(int32 NumPublicConnections, FString MatchType)
+{
+    UE_LOG(LogTemp, Warning, TEXT("Create Session Called"));
+    
+    if (!sessionInterface.IsValid()) return;
+
+    // Check if a session already exists and destroy it if necessary
+    auto ExistingSession = sessionInterface->GetNamedSession(NAME_GameSession);
+    if (ExistingSession != nullptr)
+    {
+        sessionInterface->DestroySession(NAME_GameSession);
+    }
+
+    // Initialize session settings
+    sessionSettings = MakeShareable(new FOnlineSessionSettings());
+    sessionSettings->bIsLANMatch = IOnlineSubsystem::Get()->GetSubsystemName() == "NULL"; // Check if using LAN
+    sessionSettings->NumPublicConnections = NumPublicConnections; // Number of public connections
+    sessionSettings->bShouldAdvertise = true; // Make session visible to others
+    sessionSettings->bUsesPresence = true; // Enable presence for joining friends
+    sessionSettings->bAllowJoinInProgress = true; // Allow players to join in progress
+    sessionSettings->bAllowJoinViaPresence = true; // Allow join via presence (like Steam, etc.)
+    sessionSettings->bIsDedicated = false; // Not dedicated server
+    sessionSettings->bAllowJoinViaPresenceFriendsOnly = false; // Allow anyone to join
+
+    // Define custom key for matching timeout
+    const FName MATCHING_TIMEOUT_KEY = TEXT("MatchingTimeout");
+
+    // Set custom match timeout setting
+    sessionSettings->Set(MATCHING_TIMEOUT_KEY, 120.0f, EOnlineDataAdvertisementType::ViaOnlineService);
+
+    // Set match type in destination projects - 
+    const FName MATCH_TYPE_KEY = TEXT("MatchType");
+    sessionSettings->Set(MATCH_TYPE_KEY, MatchType, EOnlineDataAdvertisementType::ViaOnlineService);
+    // Create the session with the session settings
+    auto LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
+    if (!sessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *sessionSettings))
+    {
+        sessionInterface->ClearOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegateHandle);
+        UE_LOG(LogTemp, Warning, TEXT("Failed to create session!"));
+        MultiplayerOnCreateSessionComplete.Broadcast(false);
+        return;
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Session creation successful!"));
+
+    }
+    /*
+        LastSessionSettings->bUseLobbiesIfAvailable = true;
+
+    
+    
+    */
+}
+
+void UMultiplayerSessions::FindSessions(int32 MaxSearchResults)
+{
+
+}
+
+void UMultiplayerSessions::JoinSession(const FOnlineSessionSearchResult& SessionResult)
+{
+
+}
+
+void UMultiplayerSessions::DestroySession()
+{
+    
+}
+
+void UMultiplayerSessions::StartSession()
+{
 }
 
 void UMultiplayerSessions::OnCreateSessionComplete(FName SessionName, bool bWasSuccessful)
 {
-    UE_LOG(LogTemp, Warning, TEXT("Create session called"));
+    UE_LOG(LogTemp, Warning, TEXT("OnCreateSessionComplete called"));
+
+    if(sessionInterface)
+    {
+        sessionInterface->ClearOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegateHandle);
+
+    }
+
+    MultiplayerOnCreateSessionComplete.Broadcast(bWasSuccessful);
 
 }
 
@@ -62,24 +184,5 @@ void UMultiplayerSessions:: OnStartSessionComplete(FName SessionName, bool bWasS
 
 }
 
-void UMultiplayerSessions::CreateSession(int32 NumPublicConnections, FString MatchType)
-{
-}
-
-void UMultiplayerSessions::FindSessions(int32 MaxSearchResults)
-{
-}
-
-void UMultiplayerSessions::JoinSession(const FOnlineSessionSearchResult& SessionResult)
-{
-}
-
-void UMultiplayerSessions::DestroySession()
-{
-}
-
-void UMultiplayerSessions::StartSession()
-{
-}
 
 

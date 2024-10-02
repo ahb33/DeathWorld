@@ -3,7 +3,6 @@
 
 #include "Base_PickUp.h"
 #include "Components/SphereComponent.h"
-#include "Components/StaticMeshComponent.h"
 #include "MainCharacter.h"
 
 
@@ -23,14 +22,10 @@ ABase_PickUp::ABase_PickUp()
 		Set properties of Pickup Mesh
 	
 	*/
-	SphereCollision = CreateDefaultSubobject<USphereComponent>("SphereCollision");
-	RootComponent = SphereCollision;
-	SphereCollision->SetGenerateOverlapEvents(true);
-	SphereCollision->SetSphereRadius(100.f);
-
-	PickUpMesh = CreateDefaultSubobject<UStaticMeshComponent>("PickUpMesh");
-	PickUpMesh->SetupAttachment(SphereCollision);
-
+	AreaSphere = CreateDefaultSubobject<USphereComponent>("SphereCollision");
+	RootComponent = AreaSphere;
+	AreaSphere->SetGenerateOverlapEvents(true);
+	AreaSphere->SetSphereRadius(100.f);
 }
 
 // Called when the game starts or when spawned
@@ -38,7 +33,7 @@ void ABase_PickUp::BeginPlay()
 {
 	Super::BeginPlay();
 
-	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &ABase_PickUp::OnOverlapBegin);
+	AreaSphere->OnComponentBeginOverlap.AddDynamic(this, &ABase_PickUp::OnOverlapBegin);
 	
 }
 
@@ -51,7 +46,17 @@ void ABase_PickUp::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* O
 	{
 		OnPickUp(Character);
 	}
+}
 
+void ABase_PickUp::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, 
+    UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+    // Check if the overlapping actor is a character and execute desired logic
+    if (const auto Character = Cast<AMainCharacter>(OtherActor))
+    {
+        // Logic when the character ends overlap with the pickup
+        // Example: remove highlighting, reset state, etc.
+    }
 }
 
 // Called every frame
@@ -70,17 +75,17 @@ void ABase_PickUp::OnPickUp_Implementation(AMainCharacter* OverlappingPlayer)
 	    // Check if the OverlappingPlayer is valid
     if (OverlappingPlayer)
     {
-        // 1. Set the owner of the item to the OverlappingPlayer
-        SetOwner(OverlappingPlayer);
+        // // 1. Set the owner of the item to the OverlappingPlayer
+        // SetOwner(OverlappingPlayer);
 
-        // 3. Play a pickup sound effect
-        // if (PickUpSound)
-        // {
-        //     UGameplayStatics::PlaySoundAtLocation(this, PickUpSound, GetActorLocation());
-        // }
+        // // 3. Play a pickup sound effect
+        // // if (PickUpSound)
+        // // {
+        // //     UGameplayStatics::PlaySoundAtLocation(this, PickUpSound, GetActorLocation());
+        // // }
 
-        // 5. Remove the item from the world
-        Destroy();
+        // // 5. Remove the item from the world
+        // Destroy();
     }
 
 

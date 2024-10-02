@@ -34,10 +34,12 @@ protected:
 	void SprintStart(const FInputActionValue& Value);
 	void SprintEnd(const FInputActionValue& Value);
 
-	void Interact(const FInputActionValue& Value);
+	void JumpStart(const FInputActionValue& Value);
+	void JumpEnd(const FInputActionValue& Value);
 
-	UFUNCTION(Server, Reliable)
-	void Interact_Server();
+	void EquipButtonPressed(const FInputActionValue& Value);
+	void Equip();
+
 
 	UFUNCTION(Server, Reliable)
 	void SprintStart_Server();
@@ -58,14 +60,14 @@ private:
 	TObjectPtr<class UInputAction> SprintAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<class UInputAction> InteractAction;
+	TObjectPtr<class UInputAction> JumpAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class UInputAction> EquipAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
     float speedMultiplier;
 
-	// add refence to actor that will be interacted with
-	UPROPERTY()
-	AActor* InteractableActor;
 
 
 
