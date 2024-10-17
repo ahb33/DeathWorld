@@ -1,0 +1,12 @@
+/..bfg-report
+/.git
+/.qmake
+/.vs
+/.vscode
+/Content
+/DerivedDataCache
+/Intermediate
+/Saved
+/TestingProject
+/Plugins/MultiplayerPlugin/Content
+/Plugins/MultiplayerPlugin/Intermediate

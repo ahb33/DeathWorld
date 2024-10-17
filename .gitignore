@@ -1,0 +1,66 @@
+# Ignore build system files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Ignore user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore project-specific files
+*.log
+*.vscode/
+.vscode/
+.vscode/settings.json
+
+# Ignore build outputs
+*.pdb
+*.exe
+*.dll
+*.obj
+*.lib
+*.app
+*.ipa
+*.dsym
+*.exe
+*.out
+*.class
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore backup files
+*.bak
+*.old
+*.orig
+*.tmp
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Ignore temporary files
+*.swp
+*.swo
+*.swn
+*.swd
+*.tmp
+*.temp
+
+# Ignore the main executable
+DeathWorld.exe
+
+# Ignore Unreal Engine build-specific files
+*.xcodeproj
+*.xcworkspace
+*.project
+*.jucer
+*.pro
