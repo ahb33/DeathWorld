@@ -23,6 +23,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+<<<<<<< HEAD
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 	void Equip();
@@ -32,6 +33,8 @@ public:
     void ServerEquipButtonPressed();
 
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 	// FORCEINLINE USpringArmComponent* GetCameraBoom() const {return CameraBoom; }
 
 	// FORCEINLINE UCameraComponent* GetFollowCamera() const {return FollowCamera; }
@@ -47,10 +50,14 @@ protected:
 	void JumpEnd(const FInputActionValue& Value);
 
 	void EquipButtonPressed(const FInputActionValue& Value);
+<<<<<<< HEAD
 	void FireButtonPressed(const FInputActionValue& Value);
 	void FireButtonReleased(const FInputActionValue& Value);
 	void AimButtonPressed();
 	void AimButtonReleased();
+=======
+	void Equip();
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
 
 	UFUNCTION(Server, Reliable)
@@ -77,6 +84,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UInputAction> EquipAction;
 
+<<<<<<< HEAD
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UInputAction> FireAction;
 
@@ -86,4 +94,12 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
     float speedMultiplier;
 
+=======
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+    float speedMultiplier;
+
+
+
+
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 };

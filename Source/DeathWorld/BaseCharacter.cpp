@@ -39,6 +39,12 @@ ABaseCharacter::ABaseCharacter()
     LookAction = nullptr;
     InteractAction = nullptr;
     InteractableActor = nullptr;
+<<<<<<< HEAD
+=======
+
+    myWeapon = CreateDefaultSubobject<ABaseWeapon>(TEXT("Weapon"));
+
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 }
 
 void ABaseCharacter::BeginPlay()
@@ -84,7 +90,10 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
     {
         EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ABaseCharacter::Move);
         EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ABaseCharacter::Look);
+<<<<<<< HEAD
         
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
                 
         EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &ABaseCharacter::Interact);
@@ -190,9 +199,15 @@ bool ABaseCharacter::isInteracting()
 
 void ABaseCharacter::SetOverlappingWeapon(TWeakObjectPtr<ABaseWeapon> Weapon)
 {
+<<<<<<< HEAD
     if (HasAuthority())
     {
         UE_LOG(LogTemp, Warning, TEXT("Set Overlapping weapon called and has authority"));
+=======
+    UE_LOG(LogTemp, Warning, TEXT("Set Overlapping weapon called and has authority"));
+    if (HasAuthority())
+    {
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
         overlappingWeapon = Weapon;
         OnRep_OverlappingWeapon(); // Optional to update locally
     }
@@ -200,6 +215,7 @@ void ABaseCharacter::SetOverlappingWeapon(TWeakObjectPtr<ABaseWeapon> Weapon)
 
 void ABaseCharacter::OnRep_OverlappingWeapon()
 {
+<<<<<<< HEAD
     UE_LOG(LogTemp, Warning, TEXT("OnRep_OverlappingWeapon triggered "));
 
 }
@@ -270,4 +286,29 @@ bool ABaseCharacter::IsAiming()
 {
 	return (myWeapon.IsValid() && myWeapon->IsAiming());
 }
+=======
+
+}
+
+void ABaseCharacter::OnRep_CurrentWeapon()
+{
+
+}
+
+
+void ABaseCharacter::EquipWeapon(ABaseWeapon* weaponToEquip)
+{
+    // if (weaponToEquip)
+    // {
+    //     equippedWeapon = weaponToEquip;
+    //     // Additional logic to attach the weapon to the character
+    //     UE_LOG(LogTemp, Log, TEXT("Weapon equipped: %s"), *weaponToEquip->GetName());
+    // }
+}
+
+
+
+
+
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 

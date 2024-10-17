@@ -64,3 +64,13 @@ DeathWorld.exe
 *.project
 *.jucer
 *.pro
+
+# Ignore Unreal Engine asset and intermediate files
+*.umap
+*.uasset
+Config/DefaultEditor.ini
+Config/DefaultEngine.ini
+
+# Ignore additional Unreal Engine directories
+Content/
+Build/

@@ -1,12 +1,18 @@
 /..bfg-report
 /.git
 /.qmake
+<<<<<<< HEAD
 /.vs
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 /.vscode
 /Content
 /DerivedDataCache
 /Intermediate
 /Saved
+<<<<<<< HEAD
 /TestingProject
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 /Plugins/MultiplayerPlugin/Content
 /Plugins/MultiplayerPlugin/Intermediate

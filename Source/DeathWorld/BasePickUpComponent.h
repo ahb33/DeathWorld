@@ -12,8 +12,11 @@ class DEATHWORLD_API UBasePickUpComponent : public UActorComponent
 public:    
     UBasePickUpComponent();
 
+<<<<<<< HEAD
     class USphereComponent* GetAreaSphere() const {return areaSphere;}
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 protected:
     virtual void BeginPlay() override;
 

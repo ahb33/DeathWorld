@@ -30,7 +30,11 @@
 					"DeathWorld",
 					"Win64",
 					"Debug",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -47,7 +51,11 @@
 					"DeathWorld",
 					"Win64",
 					"Debug",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -67,7 +75,11 @@
 					"DeathWorld",
 					"Win64",
 					"Debug",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -84,7 +96,11 @@
 					"DeathWorld",
 					"Win64",
 					"DebugGame",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -101,7 +117,11 @@
 					"DeathWorld",
 					"Win64",
 					"DebugGame",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -121,7 +141,11 @@
 					"DeathWorld",
 					"Win64",
 					"DebugGame",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -138,7 +162,11 @@
 					"DeathWorld",
 					"Win64",
 					"Development",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -155,7 +183,11 @@
 					"DeathWorld",
 					"Win64",
 					"Development",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -175,7 +207,11 @@
 					"DeathWorld",
 					"Win64",
 					"Development",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -192,7 +228,11 @@
 					"DeathWorld",
 					"Win64",
 					"Test",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -209,7 +249,11 @@
 					"DeathWorld",
 					"Win64",
 					"Test",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -229,7 +273,11 @@
 					"DeathWorld",
 					"Win64",
 					"Test",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -246,7 +294,11 @@
 					"DeathWorld",
 					"Win64",
 					"Shipping",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -263,7 +315,11 @@
 					"DeathWorld",
 					"Win64",
 					"Shipping",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -283,7 +339,11 @@
 					"DeathWorld",
 					"Win64",
 					"Shipping",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -300,7 +360,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Debug",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -317,7 +381,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Debug",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -337,7 +405,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Debug",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -354,7 +426,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"DebugGame",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -371,7 +447,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"DebugGame",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -391,7 +471,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"DebugGame",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -408,7 +492,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Development",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -425,7 +513,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Development",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -445,7 +537,11 @@
 					"DeathWorldEditor",
 					"Win64",
 					"Development",
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -462,7 +558,11 @@
 			{
 				"name": "Launch DeathWorld (Debug)",
 				"request": "launch",
+<<<<<<< HEAD
 				"program": "C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+=======
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 				"preLaunchTask": "DeathWorld Win64 Debug Build",
 				"args": [
 				],
@@ -478,7 +578,11 @@
 			{
 				"name": "Launch DeathWorld (DebugGame)",
 				"request": "launch",
+<<<<<<< HEAD
 				"program": "C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+=======
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 				"preLaunchTask": "DeathWorld Win64 DebugGame Build",
 				"args": [
 				],
@@ -494,7 +598,11 @@
 			{
 				"name": "Launch DeathWorld (Development)",
 				"request": "launch",
+<<<<<<< HEAD
 				"program": "C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame.exe",
+=======
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame.exe",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 				"preLaunchTask": "DeathWorld Win64 Development Build",
 				"args": [
 				],
@@ -510,7 +618,11 @@
 			{
 				"name": "Launch DeathWorld (Test)",
 				"request": "launch",
+<<<<<<< HEAD
 				"program": "C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+=======
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 				"preLaunchTask": "DeathWorld Win64 Test Build",
 				"args": [
 				],
@@ -526,7 +638,11 @@
 			{
 				"name": "Launch DeathWorld (Shipping)",
 				"request": "launch",
+<<<<<<< HEAD
 				"program": "C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+=======
+				"program": "C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 				"preLaunchTask": "DeathWorld Win64 Shipping Build",
 				"args": [
 				],
@@ -545,7 +661,11 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 				"preLaunchTask": "DeathWorldEditor Win64 Debug Build",
 				"args": [
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
@@ -562,7 +682,11 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 				"preLaunchTask": "DeathWorldEditor Win64 DebugGame Build",
 				"args": [
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
@@ -579,7 +703,11 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 				"preLaunchTask": "DeathWorldEditor Win64 Development Build",
 				"args": [
+<<<<<<< HEAD
 					"C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
+=======
+					"C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject"
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
@@ -599,7 +727,11 @@
 				"args": [
 					"-projectfiles",
 					"-vscode",
+<<<<<<< HEAD
 					"-project=C:\\Users\\PREDATOR\\OneDrive\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+=======
+					"-project=C:\\Users\\User\\Documents\\Unreal Projects\\DeathWorld 5.4\\DeathWorld.uproject",
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 					"-game",
 					"-engine",
 					"-dotnet"

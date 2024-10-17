@@ -42,8 +42,11 @@ void UBasePickUpComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, A
             if (Character->HasAuthority()) // Ensure server authority
             {
                 Character->SetOverlappingWeapon(Weapon);
+<<<<<<< HEAD
                 Character->SetCurrentWeapon(Weapon);
                 Weapon->SetBaseCharacter(Character);
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
                 UE_LOG(LogTemp, Warning, TEXT("OnOverlapBegin: Weapon Set to %s"), *Weapon->GetName());
             }
         }
@@ -59,8 +62,11 @@ void UBasePickUpComponent::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AAc
             if (Character->HasAuthority()) // Ensure server authority
             {
                 Character->SetOverlappingWeapon(nullptr);
+<<<<<<< HEAD
                 // Character->SetCurrentWeapon(nullptr);
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
                 UE_LOG(LogTemp, Warning, TEXT("OnOverlapEnd: Weapon Cleared"));
             }
         }

@@ -20,8 +20,11 @@ public:
     virtual void NativeInitializeAnimation() override; 
     virtual void NativeUpdateAnimation(float DeltaTime) override;
     virtual void UpdateMovementProperties();
+<<<<<<< HEAD
     virtual void UpdateCharacterProperties(float);
     virtual void UpdateWeaponProperties();
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
 protected:
 
@@ -29,8 +32,11 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     APawn* Pawn;
 
+<<<<<<< HEAD
     class ABaseCharacter* Character; // Cached character pointer for reuse
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     /*
         Common helper functions; update base movement properties below and a
         later customize for Main which will have weapon and aiming checks
@@ -59,6 +65,7 @@ private:
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	float MovementSpeed; // we only want C++ to alter this variable
+<<<<<<< HEAD
     
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	bool bIsInAir; // this variable will check if the character is  in the air
@@ -83,4 +90,16 @@ private:
     UPROPERTY(BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	FTransform LeftHandTransform; 
 
+=======
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+	bool bIsInAir; // this variable will check if the character is  in the air
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation,meta = (AllowPrivateAccess = "true"))
+	bool bIsAccelerating; // this variable will check if the character is accelerating
+
+    
+
+	
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 };

@@ -13,14 +13,19 @@ UMultiplayerSessions::UMultiplayerSessions() : CreateSessionCompleteDelegate(FOn
     // check if subsystem variable is valid
     // get session interface from subsystem variable and store in another variable
 
+<<<<<<< HEAD
     if (GEngine)
     {
         GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("UMultiplayerSessions Constructor Called"));
     }
+=======
+    UE_LOG(LogTemp, Warning, TEXT("UMultiplayerSessions Constructor Called"));
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
     IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get();
     if (Subsystem)
     {
+<<<<<<< HEAD
         FString SubsystemName = Subsystem->GetSubsystemName().ToString();
         if (GEngine)
         {
@@ -34,6 +39,14 @@ UMultiplayerSessions::UMultiplayerSessions() : CreateSessionCompleteDelegate(FOn
             GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Online Subsystem is not valid."));
             GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Ensure that the OnlineSubsystemSteam is enabled in your project settings."));
         }
+=======
+        UE_LOG(LogTemp, Warning, TEXT("Using Online Subsystem: %s"), *Subsystem->GetSubsystemName().ToString());
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("Online Subsystem is not valid."));
+        UE_LOG(LogTemp, Error, TEXT("Ensure that the OnlineSubsystemSteam is enabled in your project settings."));
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     }
 
     InitSubsystem();
@@ -108,7 +121,10 @@ void UMultiplayerSessions::CreateSession(int32 NumPublicConnections, FString Mat
     sessionSettings->bAllowJoinViaPresence = true; // Allow join via presence (like Steam, etc.)
     sessionSettings->bIsDedicated = false; // Not dedicated server
     sessionSettings->bAllowJoinViaPresenceFriendsOnly = false; // Allow anyone to join
+<<<<<<< HEAD
     sessionSettings->bUseLobbiesIfAvailable = true;
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
     // Define custom key for matching timeout
     const FName MATCHING_TIMEOUT_KEY = TEXT("MatchingTimeout");
@@ -130,12 +146,24 @@ void UMultiplayerSessions::CreateSession(int32 NumPublicConnections, FString Mat
     }
     else
     {
+<<<<<<< HEAD
         if (GEngine)
         {
             GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Session Creation Successful"));
         }
 
     }
+=======
+        UE_LOG(LogTemp, Warning, TEXT("Session creation successful!"));
+
+    }
+    /*
+        LastSessionSettings->bUseLobbiesIfAvailable = true;
+
+    
+    
+    */
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 }
 
 void UMultiplayerSessions::FindSessions(int32 MaxSearchResults)

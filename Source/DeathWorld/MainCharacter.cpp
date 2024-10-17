@@ -20,6 +20,10 @@ AMainCharacter::AMainCharacter()
     JumpAction = nullptr;
     EquipAction = nullptr;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     // static ConstructorHelpers::FObjectFinder<USkeletalMesh> SkeletalMeshAsset(TEXT("/Game/KayKit/Characters/rogue"));
     // if (SkeletalMeshAsset.Succeeded())
     // {
@@ -58,6 +62,7 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
         EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &AMainCharacter::SprintEnd);
 
         EnhancedInputComponent->BindAction(EquipAction, ETriggerEvent::Triggered, this, &AMainCharacter::EquipButtonPressed);
+<<<<<<< HEAD
         EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &AMainCharacter::FireButtonPressed);
         EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Completed, this, &AMainCharacter::FireButtonReleased);
 
@@ -75,6 +80,11 @@ void AMainCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 
 }
 
+=======
+    }
+}
+
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 void AMainCharacter::SprintStart(const FInputActionValue& Value)
 {
     SprintStart_Server();
@@ -102,6 +112,7 @@ void AMainCharacter::EquipButtonPressed(const FInputActionValue& Value)
     Equip();
 }
 
+<<<<<<< HEAD
 // Server-side implementation
 void AMainCharacter::ServerEquipButtonPressed_Implementation()
 {
@@ -116,23 +127,37 @@ void AMainCharacter::ServerEquipButtonPressed_Implementation()
 void AMainCharacter::Equip()
 {
     // check if overlapping weapon is valid 
+=======
+void AMainCharacter::Equip()
+{
+    // check if overlapping weapon is valid 
+
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     if (GetOverlappingWeapon().IsValid() && GetCurrentWeapon().IsValid())
     {
         UE_LOG(LogTemp, Warning, TEXT("Both weapons are valid"));
         if (HasAuthority())
         {
             // Just call EquipWeapon without using it in a conditional check
+<<<<<<< HEAD
             // GetCurrentWeapon()->SetOwner(this);
             ServerEquipButtonPressed_Implementation();
         }
         else
         {
             ServerEquipButtonPressed();
+=======
+            GetCurrentWeapon()->EquipWeapon(GetOverlappingWeapon().Get());
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
         }
     }
     else
     {
+<<<<<<< HEAD
         UE_LOG(LogTemp, Warning, TEXT("Weapons are not valid"));
+=======
+        UE_LOG(LogTemp, Warning, TEXT("One or both variables are invalid"));
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     }
 
 	// else if (GetCurrentWeapon()->ShouldSwapWeapons())
@@ -143,6 +168,7 @@ void AMainCharacter::Equip()
 }
 
 
+<<<<<<< HEAD
 void AMainCharacter::FireButtonPressed(const FInputActionValue& Value)
 {
     ServerSetFiring(true);  // Directly request server to start firing
@@ -178,6 +204,8 @@ void AMainCharacter::AimButtonReleased()
     }
 }
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 void AMainCharacter::SprintEnd(const FInputActionValue& Value)
 {
     SprintEnd_Server();

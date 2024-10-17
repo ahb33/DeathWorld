@@ -63,13 +63,22 @@ def monitor_directory(src_dir, dest_dir):
 
     try:
         while True:
+<<<<<<< HEAD
             time.sleep(1)  # Add a small sleep to reduce CPU usage
+=======
+            pass
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     src_dir = r"C:\Users\PREDATOR\Documents\Unreal Projects\OnlinePlugin\Plugins\MultiplayerPlugin"
     dest_dir = r"C:\Users\PREDATOR\Documents\Unreal Projects\DeathWorld 5.4\Plugins\MultiplayerPlugin"  # Adjusted to expected path
+=======
+    src_dir = r"C:\Users\User\Documents\Unreal Projects\OnlinePlugin\Plugins\MultiplayerPlugin"
+    dest_dir = r"C:\Users\User\Documents\Unreal Projects\DeathWorld\Plugins\MultiplayerPlugin"  # Corrected path
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
     monitor_directory(src_dir, dest_dir)

@@ -16,25 +16,38 @@ public:
     // Sets default values for this character's properties
     ABaseCharacter();
 
+<<<<<<< HEAD
     /*
 	Allow actors to initialize themselves on the C++ side after all of their components have been initialized, 
 	only called during gameplay */
     virtual void PostInitializeComponents() override; 
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     // Called every frame
     virtual void Tick(float DeltaTime) override;
 
     // Called to bind functionality to input
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+<<<<<<< HEAD
+=======
+    // main character can only call this function by pressing equip button which the AI wont need
+    UFUNCTION(BlueprintCallable, Category = "Weapon")
+    virtual void EquipWeapon(class ABaseWeapon* WeaponToEquip);
+
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     bool isInteracting();
 
     bool IsCrouched();
 
+<<<<<<< HEAD
     bool IsAiming();
 
     bool IsWeaponEquipped();
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     void SetOverlappingWeapon(TWeakObjectPtr<class ABaseWeapon> Weapon);
 
     // Getter function for overlappingWeapon
@@ -42,10 +55,14 @@ public:
 
     TWeakObjectPtr<class ABaseWeapon> GetCurrentWeapon() const { return myWeapon; }
 
+<<<<<<< HEAD
     void SetCurrentWeapon(TWeakObjectPtr<ABaseWeapon> NewWeapon);
 
     // UFUNCTION()
     // void OnRep_MyWeapon();
+=======
+
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     UFUNCTION()
 	void OnRep_OverlappingWeapon(); // Called when overlappingWeapon is updated
 
@@ -53,6 +70,7 @@ public:
 	void OnRep_CurrentWeapon(); // Called when myWeapon is updated
 
 
+<<<<<<< HEAD
     /*
         In Unreal Engine, only the player’s owned actors can call Server RPCs. 
         weapons are not typically owned by the player but by the server or BaseCharacter in our instance
@@ -68,6 +86,8 @@ public:
 
 
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
@@ -76,9 +96,12 @@ protected:
     void Look(const struct FInputActionValue& Value);
     void Interact(const FInputActionValue& Value);
 
+<<<<<<< HEAD
     // Shared logic for handling the firing state
     virtual void SetFiringState(bool bFire);
 
+=======
+>>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     UFUNCTION(Server, Reliable)
 	void Interact_Server();
 
