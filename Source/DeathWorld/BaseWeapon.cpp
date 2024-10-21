@@ -10,10 +10,7 @@
 #include "Math/UnrealMathUtility.h" 
 #include "MyPlayerController.h"
 #include "BasePickUpComponent.h"
-<<<<<<< HEAD
 #include "WeaponState.h"
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/CharacterMovementComponent.h" 
 #include "GameFramework/Actor.h"
@@ -75,15 +72,12 @@ void ABaseWeapon::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-<<<<<<< HEAD
     FHitResult HitResult;
 	CrossHairTrace(HitResult);
 
 	SetHUDCrosshairs(DeltaTime);
 
 
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 }
 
 void ABaseWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -93,10 +87,9 @@ void ABaseWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifet
     DOREPLIFETIME(ABaseWeapon, equippedWeapon);
 	DOREPLIFETIME(ABaseWeapon, secondaryWeapon);
     DOREPLIFETIME(ABaseWeapon, primaryWeapon);
-<<<<<<< HEAD
     DOREPLIFETIME(ABaseWeapon, WeaponState);
 
-    DOREPLIFETIME(ABaseWeapon, bAiming);
+
     DOREPLIFETIME(ABaseWeapon, bIsFiring);
     DOREPLIFETIME(ABaseWeapon, CrosshairVelocityFactor);
 
@@ -132,12 +125,6 @@ bool ABaseWeapon::WeaponIsEmpty() const
 }
 
 
-=======
-
-
-}
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 void ABaseWeapon::EquipWeapon(TWeakObjectPtr<class ABaseWeapon> currentWeapon)
 {
     baseCharacter = baseCharacter == nullptr ? Cast<ABaseCharacter>(GetOwner()) : baseCharacter;
@@ -150,19 +137,6 @@ void ABaseWeapon::EquipWeapon(TWeakObjectPtr<class ABaseWeapon> currentWeapon)
         UE_LOG(LogTemp, Warning, TEXT("Owner Character is still not valid"));
         return;
     }
-<<<<<<< HEAD
-=======
-    // currentWeapon->SetOwner(baseCharacter);
-    // if (!baseCharacter)
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("Base Character is still not valid"));
-    //     return;
-    // }
-	/*
-        if no weapon is equipped equip primary weapon else equip secondary else if both equipped then swap
-
-	*/
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
 	// if no primary weapon is equipped, EquipSecondary
 	// if secondary weapon is equipped, EquipPrimary
@@ -189,7 +163,6 @@ void ABaseWeapon::EquipPrimaryWeapon(TWeakObjectPtr<class ABaseWeapon> firstWeap
 {
     UE_LOG(LogTemp, Warning, TEXT("Equip primary weapon called"));
 
-<<<<<<< HEAD
     if(firstWeapon == nullptr) return;
 
 	equippedWeapon = firstWeapon;
@@ -203,19 +176,6 @@ void ABaseWeapon::EquipPrimaryWeapon(TWeakObjectPtr<class ABaseWeapon> firstWeap
     if (HandSocket) HandSocket->AttachActor(equippedWeapon.Get(), baseCharacter->GetMesh());
 
     SetHUDCrosshairs(0.f);
-=======
-
-    if(firstWeapon == nullptr) return;
-    
-	equippedWeapon = firstWeapon;
-
-    if (baseCharacter) // Check baseCharacter validity
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Base character is finally valid"));
-    }
-    else  UE_LOG(LogTemp, Warning, TEXT("Base character is not valid"));
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 }
 
 void ABaseWeapon::EquipSecondaryWeapon(TWeakObjectPtr<class ABaseWeapon> SecondWeapon)
@@ -223,7 +183,6 @@ void ABaseWeapon::EquipSecondaryWeapon(TWeakObjectPtr<class ABaseWeapon> SecondW
 
 }
 
-<<<<<<< HEAD
 void ABaseWeapon::OnRep_EquippedWeapon()
 {
 
@@ -281,9 +240,6 @@ FName ABaseWeapon::DetermineSocketNameBasedOnWeaponType() const
             return FName("DefaultSocket");
     }
 }
-=======
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
 void ABaseWeapon::OnRep_Owner()
 {
@@ -302,13 +258,6 @@ void ABaseWeapon::OnRep_Owner()
             UE_LOG(LogTemp, Warning, TEXT("base character successfully cast"));
         }
 	}
-}
-
-<<<<<<< HEAD
-
-void ABaseWeapon::SetAiming(bool bIsAiming)
-{
-    bAiming = bIsAiming;
 }
 
 void ABaseWeapon::SetWeaponState(EWeaponState NewState)
@@ -370,13 +319,13 @@ void ABaseWeapon::ConfigureDroppedState()
 }
 
 FVector ABaseWeapon::CrossHairTrace(FHitResult& TraceHitResult)
-{
+{    
 	FVector2D ViewportSize;
 
     if (GEngine && GEngine->GameViewport)
     {
         GEngine->GameViewport->GetViewportSize(ViewportSize);
-        UE_LOG(LogTemp, Warning, TEXT("Viewport Size: %s"), *ViewportSize.ToString());
+        // UE_LOG(LogTemp, Warning, TEXT("Viewport Size: %s"), *ViewportSize.ToString());
     }
 
     FVector2D CrosshairLocation(ViewportSize.X / 2.f, ViewportSize.Y / 2.f);
@@ -388,9 +337,9 @@ FVector ABaseWeapon::CrossHairTrace(FHitResult& TraceHitResult)
         CrosshairWorldDirection
     );
 
-    UE_LOG(LogTemp, Warning, TEXT("Crosshair Location: %s"), *CrosshairLocation.ToString());
-    UE_LOG(LogTemp, Warning, TEXT("Crosshair World Position: %s"), *CrosshairWorldPosition.ToString());
-    UE_LOG(LogTemp, Warning, TEXT("Crosshair World Direction: %s"), *CrosshairWorldDirection.ToString());
+    // UE_LOG(LogTemp, Warning, TEXT("Crosshair Location: %s"), *CrosshairLocation.ToString());
+    // UE_LOG(LogTemp, Warning, TEXT("Crosshair World Position: %s"), *CrosshairWorldPosition.ToString());
+    // UE_LOG(LogTemp, Warning, TEXT("Crosshair World Direction: %s"), *CrosshairWorldDirection.ToString());
 
     if (bScreenToWorld)
     {
@@ -401,7 +350,7 @@ FVector ABaseWeapon::CrossHairTrace(FHitResult& TraceHitResult)
         if (bHit && TraceHitResult.bBlockingHit)
         {
             LocalHitTarget = TraceHitResult.ImpactPoint;
-            UE_LOG(LogTemp, Warning, TEXT("Line Trace Hit at: %s"), *TraceHitResult.ImpactPoint.ToString());
+            // UE_LOG(LogTemp, Warning, TEXT("Line Trace Hit at: %s"), *TraceHitResult.ImpactPoint.ToString());
             return TraceHitResult.ImpactPoint;
         }
         else
@@ -413,129 +362,10 @@ FVector ABaseWeapon::CrossHairTrace(FHitResult& TraceHitResult)
 
     UE_LOG(LogTemp, Warning, TEXT("Screen to World conversion failed"));
     return FVector::ZeroVector;
-=======
-void ABaseWeapon::OnRep_EquippedWeapon()
-{
-
-}
-
-void ABaseWeapon::OnRep_SecondaryWeapon()
-{
-	
-}
-
-
-void ABaseWeapon::SwapWeapons()
-{
-
-}
-
-
-
-void ABaseWeapon::HandleAttachToSocket()
-{
-    // // Ensure the equipped weapon is valid
-    // if (!equippedWeapon.IsValid())
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("HandleAttachToSocket: equippedWeapon is not valid"));
-    //     return;
-    // }
-
-    // // Ensure the owning character is valid
-    // if (!baseCharacter.IsValid() || !baseCharacter->GetMesh())
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("HandleAttachToSocket: baseCharacter or its Mesh is nullptr"));
-    //     return;
-    // }
-
-    // // Determine the socket name based on weapon type
-    // FName SocketName = DetermineSocketNameBasedOnWeaponType();
-
-    // // Attach the weapon to the designated socket on the character mesh
-    // // AttachActorToSocketByName(equippedWeapon.Get(), SocketName);
-}
-
-// Attach weapon to the right hand.
-void ABaseWeapon::AttachActorToRightHand(AActor* WeaponToAttach)
-{
-    UE_LOG(LogTemp, Log, TEXT("Attempting to attach %s to RightHandSocket"), *WeaponToAttach->GetName());
-    AttachActorToSocketByName(WeaponToAttach, FName("RightHandSocket"));
-}
-
-// Attach weapon to the secondary weapon socket.
-void ABaseWeapon::AttachWeaponToWeaponSocket(AActor* WeaponToAttach)
-{
-    UE_LOG(LogTemp, Log, TEXT("Attempting to attach %s to SecondaryWeaponSocket"), *WeaponToAttach->GetName());
-    AttachActorToSocketByName(WeaponToAttach, FName("SecondaryWeaponSocket"));
-}
-
-void ABaseWeapon::AttachActorToSocket(AActor* WeaponToAttach, AActor* TargetActor)
-{
-    if (!WeaponToAttach || !TargetActor)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("AttachActorToSocket: WeaponToAttach or TargetActor is nullptr"));
-        return;
-    }
-
-    // Attach to a socket based on the weapon type
-    FName SocketName = DetermineSocketNameBasedOnWeaponType();
-    AttachActorToSocketByName(WeaponToAttach, SocketName);
-}
-
-FName ABaseWeapon::DetermineSocketNameBasedOnWeaponType() const
-{
-    switch (WeaponType)
-    {
-        case EWeaponType::EWT_HandGun:
-            return FName("HolsterSocket");
-        case EWeaponType::EWT_AssaultRifle:
-        case EWeaponType::EWT_Shotgun:
-        case EWeaponType::EWT_SniperRifle:
-            return FName("WeaponSocket");
-        default:
-            return FName("DefaultSocket");
-    }
-}
-
-void ABaseWeapon::AttachActorToSocketByName(AActor* WeaponToAttach, FName SocketName)
-{
-    // if (!baseCharacter.IsValid() || !baseCharacter->GetMesh())
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("AttachActorToSocketByName: baseCharacter or its Mesh is nullptr"));
-    //     return;
-    // }
-
-    // if (!WeaponToAttach)
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("AttachActorToSocketByName: WeaponToAttach is nullptr"));
-    //     return;
-    // }
-
-    // const USkeletalMeshSocket* Socket = baseCharacter->GetMesh()->GetSocketByName(SocketName);
-    // if (Socket)
-    // {
-    //     Socket->AttachActor(WeaponToAttach, baseCharacter->GetMesh());
-    //     UE_LOG(LogTemp, Log, TEXT("Successfully attached %s to socket %s"), *WeaponToAttach->GetName(), *SocketName.ToString());
-    // }
-    // else
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("Failed to attach %s to socket %s: Socket not found"), *WeaponToAttach->GetName(), *SocketName.ToString());
-    // }
-}
-
-void ABaseWeapon::SetAiming(bool bIsAiming)
-{
-}
-
-void ABaseWeapon::ServerSetAiming_Implementation(bool bIsAiming)
-{
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 }
 
 void ABaseWeapon::SetHUDCrosshairs(float DeltaTime)
 {
-<<<<<<< HEAD
     if (baseCharacter == nullptr) return;
 
     AMyPlayerController* PlayerController = Cast<AMyPlayerController>(baseCharacter->GetController());
@@ -575,7 +405,3 @@ void ABaseWeapon::SetHUDCrosshairs(float DeltaTime)
 
 
 
-=======
-
-}
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582

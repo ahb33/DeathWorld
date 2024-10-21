@@ -34,17 +34,15 @@ ABaseCharacter::ABaseCharacter()
     GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
     GetCharacterMovement()->MaxWalkSpeed = 50.f;
     GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
+    GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
+    // Set default crouch state
+    bIsPlayerCrouching = false;
+
 
     MoveAction = nullptr;
     LookAction = nullptr;
     InteractAction = nullptr;
     InteractableActor = nullptr;
-<<<<<<< HEAD
-=======
-
-    myWeapon = CreateDefaultSubobject<ABaseWeapon>(TEXT("Weapon"));
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 }
 
 void ABaseCharacter::BeginPlay()
@@ -66,6 +64,7 @@ void ABaseCharacter::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 
     isInteracting();
+    AimOffset(DeltaTime);
 
 }
 
@@ -76,6 +75,8 @@ void ABaseCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
     DOREPLIFETIME(ABaseCharacter, Health);
     DOREPLIFETIME(ABaseCharacter, overlappingWeapon);
     DOREPLIFETIME(ABaseCharacter, myWeapon);
+    DOREPLIFETIME(ABaseCharacter, bAiming);
+    
 
 
     // Add other properties to replicate
@@ -89,12 +90,7 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
     if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
     {
         EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ABaseCharacter::Move);
-        EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ABaseCharacter::Look);
-<<<<<<< HEAD
-        
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
-
+        EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ABaseCharacter::Look);        
                 
         EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &ABaseCharacter::Interact);
 
@@ -199,15 +195,9 @@ bool ABaseCharacter::isInteracting()
 
 void ABaseCharacter::SetOverlappingWeapon(TWeakObjectPtr<ABaseWeapon> Weapon)
 {
-<<<<<<< HEAD
     if (HasAuthority())
     {
         UE_LOG(LogTemp, Warning, TEXT("Set Overlapping weapon called and has authority"));
-=======
-    UE_LOG(LogTemp, Warning, TEXT("Set Overlapping weapon called and has authority"));
-    if (HasAuthority())
-    {
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
         overlappingWeapon = Weapon;
         OnRep_OverlappingWeapon(); // Optional to update locally
     }
@@ -215,7 +205,6 @@ void ABaseCharacter::SetOverlappingWeapon(TWeakObjectPtr<ABaseWeapon> Weapon)
 
 void ABaseCharacter::OnRep_OverlappingWeapon()
 {
-<<<<<<< HEAD
     UE_LOG(LogTemp, Warning, TEXT("OnRep_OverlappingWeapon triggered "));
 
 }
@@ -237,16 +226,21 @@ void ABaseCharacter::OnRep_CurrentWeapon()
 
 void ABaseCharacter::ServerSetAiming_Implementation(bool bIsAiming)
 {
-    if (GetCurrentWeapon().IsValid())
-    {
-        GetCurrentWeapon()->SetAiming(bIsAiming);
-    }
+    SetAiming(bIsAiming);
 }
 
 bool ABaseCharacter::ServerSetAiming_Validate(bool bIsAiming)
 {
     return true;  // Return true unless specific validation logic is needed
 }
+
+
+void ABaseCharacter::SetAiming(bool bIsAiming) 
+{
+    bAiming = bIsAiming;
+}
+
+
 
 // In BaseCharacter.cpp
 void ABaseCharacter::ServerSetFiring_Implementation(bool bFire)
@@ -277,38 +271,77 @@ void ABaseCharacter::PostInitializeComponents()
 	}
 }
 
+
+// Core logic for setting crouch state
+void ABaseCharacter::SetCrouching(bool bCrouch)
+{
+	if (bCrouch)
+	{
+		UnCrouch();
+	}
+	else
+	{
+		Crouch();
+	}
+}
+
+
 bool ABaseCharacter::IsWeaponEquipped()
 {
 	return (myWeapon.IsValid() && myWeapon->GetEquippedWeapon() != nullptr);
 }
 
-bool ABaseCharacter::IsAiming()
+void ABaseCharacter::AimOffset(float DeltaTime)
 {
-	return (myWeapon.IsValid() && myWeapon->IsAiming());
-}
-=======
+	// First check if you are equipping the weapon
+	if(!myWeapon.IsValid() || myWeapon->GetEquippedWeapon() == nullptr) return;
+
+    // we want to change pitch of gun while running but we dont really care about the yaw
+
+	/*get vector for velocity using Unreal's GetVelocity function
+	get vector for lateral speed using the x and y of vector you just created
+	now you can create a float for the character's lateral speed by obtaining the size of the vector
+	you just created */ 
+
+	FVector Velocity = GetVelocity();
+    FVector LateralSpeed = FVector(Velocity.X, Velocity.Y, 0.f); // movement in Z does not matter
+    float MovementSpeed = LateralSpeed.Size();
+
+	/*create variable to check if in air */
+	bool bIsInAir = GetCharacterMovement()->IsFalling();
+
+    float InterpSpeed = 5.0f;  // You can adjust this value to control the smoothness
+    // 2 cases to worry about
+	// 1: *if standing still and not in air */
+	if (MovementSpeed == 0.f && !bIsInAir) 
+    {
+		/*Need to be able to calculate Delta Rotation
+        
+		create variable for starting rotation and aiming rotation*/
+
+		FRotator CurrentAimRotation = FRotator(0.f, GetBaseAimRotation().Yaw, 0.f);
+		FRotator DeltaAimRotation = UKismetMathLibrary::NormalizedDeltaRotator(CurrentAimRotation, StartingAimRotation);
+		AO_Yaw = FMath::FInterpTo(AO_Yaw, DeltaAimRotation.Yaw, DeltaTime, InterpSpeed);
+		bUseControllerRotationYaw = false;	
+	}
+
+	/*2 : if running or jumping */
+	if(MovementSpeed > 0 || bIsInAir)
+	{
+		StartingAimRotation = FRotator(0.f, GetBaseAimRotation().Yaw, 0.f);
+		//We need to keep AO_Yaw 0 as we keep moving
+		AO_Yaw = 0.f;
+		bUseControllerRotationYaw = true;
+	}
+    
+    AO_Pitch = FMath::FInterpTo(AO_Pitch, GetBaseAimRotation().Pitch, DeltaTime, InterpSpeed);
 
 }
 
-void ABaseCharacter::OnRep_CurrentWeapon()
+
+FVector ABaseCharacter::GetHitTarget() const
 {
-
+	if (!myWeapon.IsValid()) return FVector(); // if myWeapon is not valid return empty FVector
+	return myWeapon->GetHitTarget(); // else return the HitTarget
 }
-
-
-void ABaseCharacter::EquipWeapon(ABaseWeapon* weaponToEquip)
-{
-    // if (weaponToEquip)
-    // {
-    //     equippedWeapon = weaponToEquip;
-    //     // Additional logic to attach the weapon to the character
-    //     UE_LOG(LogTemp, Log, TEXT("Weapon equipped: %s"), *weaponToEquip->GetName());
-    // }
-}
-
-
-
-
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 

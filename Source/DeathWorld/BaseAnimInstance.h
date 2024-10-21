@@ -20,11 +20,8 @@ public:
     virtual void NativeInitializeAnimation() override; 
     virtual void NativeUpdateAnimation(float DeltaTime) override;
     virtual void UpdateMovementProperties();
-<<<<<<< HEAD
     virtual void UpdateCharacterProperties(float);
     virtual void UpdateWeaponProperties();
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
 protected:
 
@@ -32,11 +29,8 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     APawn* Pawn;
 
-<<<<<<< HEAD
     class ABaseCharacter* Character; // Cached character pointer for reuse
 
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     /*
         Common helper functions; update base movement properties below and a
         later customize for Main which will have weapon and aiming checks
@@ -65,18 +59,19 @@ private:
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	float MovementSpeed; // we only want C++ to alter this variable
-<<<<<<< HEAD
     
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	bool bIsInAir; // this variable will check if the character is  in the air
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	bool bIsAccelerating; // this variable will check if the character is accelerating
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+	bool bIsCrouching;
  
     // both AI and mainchaaracter will need to update their animation based on weather weapon is equipped
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
     bool bWeaponEquipped;
-
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	bool bFireWeapon;
@@ -87,19 +82,31 @@ private:
     UPROPERTY(BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	bool bIsPlayerReloading;
 
+    UPROPERTY(BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	bool bLocallyControlled;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+	float YawOffset;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+	float Lean;
+
+    UPROPERTY(BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+	float AO_Yaw;
+
+	UPROPERTY(BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+	float AO_Pitch;
+    
     UPROPERTY(BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 	FTransform LeftHandTransform; 
 
-=======
+    UPROPERTY(BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	FRotator RightHandRotation;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
-	bool bIsInAir; // this variable will check if the character is  in the air
+    UPROPERTY(BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+	bool bUseFABRIK;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Animation,meta = (AllowPrivateAccess = "true"))
-	bool bIsAccelerating; // this variable will check if the character is accelerating
 
-    
 
-	
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
+
 };

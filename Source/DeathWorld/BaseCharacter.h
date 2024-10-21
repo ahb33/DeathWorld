@@ -16,38 +16,21 @@ public:
     // Sets default values for this character's properties
     ABaseCharacter();
 
-<<<<<<< HEAD
     /*
 	Allow actors to initialize themselves on the C++ side after all of their components have been initialized, 
 	only called during gameplay */
     virtual void PostInitializeComponents() override; 
 
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     // Called every frame
     virtual void Tick(float DeltaTime) override;
 
     // Called to bind functionality to input
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-<<<<<<< HEAD
-=======
-    // main character can only call this function by pressing equip button which the AI wont need
-    UFUNCTION(BlueprintCallable, Category = "Weapon")
-    virtual void EquipWeapon(class ABaseWeapon* WeaponToEquip);
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     bool isInteracting();
-
-    bool IsCrouched();
-
-<<<<<<< HEAD
-    bool IsAiming();
 
     bool IsWeaponEquipped();
 
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     void SetOverlappingWeapon(TWeakObjectPtr<class ABaseWeapon> Weapon);
 
     // Getter function for overlappingWeapon
@@ -55,14 +38,10 @@ public:
 
     TWeakObjectPtr<class ABaseWeapon> GetCurrentWeapon() const { return myWeapon; }
 
-<<<<<<< HEAD
     void SetCurrentWeapon(TWeakObjectPtr<ABaseWeapon> NewWeapon);
 
     // UFUNCTION()
     // void OnRep_MyWeapon();
-=======
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     UFUNCTION()
 	void OnRep_OverlappingWeapon(); // Called when overlappingWeapon is updated
 
@@ -70,7 +49,6 @@ public:
 	void OnRep_CurrentWeapon(); // Called when myWeapon is updated
 
 
-<<<<<<< HEAD
     /*
         In Unreal Engine, only the player’s owned actors can call Server RPCs. 
         weapons are not typically owned by the player but by the server or BaseCharacter in our instance
@@ -81,32 +59,44 @@ public:
     UFUNCTION(Server, Reliable, WithValidation)
 	void ServerSetAiming(bool bIsAiming);
 
+    void SetAiming(bool bIsAiming);
+    FORCEINLINE bool IsPlayerAiming() const {return bAiming;} // getting for aiming
+
     UFUNCTION(Server, Reliable, WithValidation)
     void ServerSetFiring(bool bFire);
 
+    FVector GetHitTarget() const;
 
 
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
+    FORCEINLINE bool IsPlayerCrouching() const { return  bIsPlayerCrouching; }
+
+
+    FORCEINLINE float GetCharacterYaw() const { return AO_Yaw; }
+	FORCEINLINE float GetCharacterPitch() const { return AO_Pitch; }
+
 protected:
+
+
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
 
     void Move(const struct FInputActionValue& Value);
     void Look(const struct FInputActionValue& Value);
     void Interact(const FInputActionValue& Value);
 
-<<<<<<< HEAD
     // Shared logic for handling the firing state
     virtual void SetFiringState(bool bFire);
 
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     UFUNCTION(Server, Reliable)
 	void Interact_Server();
 
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+    void AimOffset(float DeltaTime);
+
+    // Core crouching logic
+    void SetCrouching(bool bCrouch);
+   
 private:
 
     // Pointer to the overlapping pickup, set by the pickup itself
@@ -118,6 +108,7 @@ private:
     UPROPERTY(ReplicatedUsing = OnRep_CurrentWeapon)
     TWeakObjectPtr<class ABaseWeapon> myWeapon;
 
+    
     // add reference to actor that will be interacted with
 	UPROPERTY()
 	AActor* InteractableActor;
@@ -146,9 +137,24 @@ private:
     UPROPERTY(Replicated, EditAnywhere, BlueprintReadOnly, Category = Stats, meta = (AllowPrivateAccess = "true"))
     float Health;
 
+
+	UPROPERTY(Replicated)
+	bool bAiming = false;
+
+    bool bIsPlayerCrouching;
+
+
+
+
+
     /*
 
         consolidate code for speed and accleration 
     */
+
+   	FRotator StartingAimRotation;
+
+   	float AO_Yaw;
+	float AO_Pitch;
     
 };

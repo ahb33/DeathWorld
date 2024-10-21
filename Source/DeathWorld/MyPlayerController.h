@@ -13,11 +13,8 @@ UCLASS()
 class DEATHWORLD_API AMyPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-<<<<<<< HEAD
 
 protected:
     virtual void BeginPlay() override;
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 	
 };

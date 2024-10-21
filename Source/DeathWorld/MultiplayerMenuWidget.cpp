@@ -2,10 +2,7 @@
 
 
 #include "MultiplayerMenuWidget.h"
-<<<<<<< HEAD
 #include "Kismet/GameplayStatics.h"
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 #include "My_GameInstance.h"
 
 
@@ -109,7 +106,6 @@ void UMultiplayerMenuWidget::OnBackButtonClicked()
 
 void UMultiplayerMenuWidget::OnCreateSession(bool bWasSuccessful)
 {
-<<<<<<< HEAD
     if (bWasSuccessful)
     {
         if (GEngine)
@@ -124,15 +120,6 @@ void UMultiplayerMenuWidget::OnCreateSession(bool bWasSuccessful)
         {
             GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("BWasSuccessful failed"));
         }
-=======
-    if(bWasSuccessful)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Session created successfully"));
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Session not created successfully"));
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
     }
     // travel to lobby
 }

@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "WeaponTypes.h"
-<<<<<<< HEAD
 #include "Kismet/GameplayStatics.h"
 #include "MyHUD.h"
 #include "WeaponState.h"
@@ -14,10 +13,6 @@
 #define Trace_Length 10000.f
 
 
-=======
-#include "BaseWeapon.generated.h"
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 UCLASS()
 class DEATHWORLD_API ABaseWeapon : public AActor
 {
@@ -30,7 +25,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-<<<<<<< HEAD
 	/* Returns the properties used for network replication, 
 	this needs to be overridden by all actor classes with native replicated properties*/ 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
@@ -46,12 +40,6 @@ public:
 	such as point of impact and surface normal at that point.*/ 
 
 
-=======
-	/*Returns the properties used for network replication, 
-	this needs to be overridden by all actor classes with native replicated properties*/ 
-	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
 	/*
 		this will be parent class of 2 types of weapon: hitscan and projectile weapons
@@ -82,24 +70,11 @@ public:
 
 	void SwapWeapons();
 
-<<<<<<< HEAD
 
 	void AttachWeaponToWeaponSocket(AActor* WeaponToAttach);
 
 	void AttachActorToSocketByName(AActor* WeaponToAttach, FName SocketName);
 
-=======
-	void AttachActorToRightHand(AActor* ActorToAttach);
-
-	void AttachWeaponToWeaponSocket(AActor* WeaponToAttach);
-
-	void AttachActorToSocket(AActor* ActorToAttach, AActor* TargetActor);	
-
-	void AttachActorToSocketByName(AActor* WeaponToAttach, FName SocketName);
-
-	void HandleAttachToSocket();
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 	FName DetermineSocketNameBasedOnWeaponType() const;
 
 	// FVector CrossHairTrace(FHitResult& TraceHitResult); /*Structure containing information about one hit of a trace
@@ -109,11 +84,6 @@ public:
 	based on character's velocity and firing which will involve interpolation so pass DeltaTime 
 	function will also be virtual so each child class sets its own crosshair*/
 	virtual void SetHUDCrosshairs(float DeltaTime);
-
-	void SetAiming(bool bIsAiming);
-
-<<<<<<< HEAD
-    bool IsAiming() const { return bAiming;} 
 
 
 	EWeaponType GetWeaponType() const {return WeaponType;}
@@ -144,15 +114,11 @@ public:
 	// function will return true if weapon is empty and will not fire
 	bool WeaponIsEmpty() const;
 
+	
+	FVector GetHitTarget() const {return LocalHitTarget;}
+	
 
-=======
-	UFUNCTION(Server, Reliable)
-	void ServerSetAiming(bool bIsAiming);
 
-	EWeaponType GetWeaponType() const {return WeaponType;}
-
-	// TWeakObjectPtr<class ABaseCharacter> GetBaseCharacter();
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 
 protected:
 	// Called when the game starts or when spawned
@@ -168,18 +134,10 @@ protected:
 	virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
-<<<<<<< HEAD
 private:
 
 	UPROPERTY(ReplicatedUsing = OnRep_EquippedWeapon)
     TWeakObjectPtr<class ABaseWeapon> equippedWeapon; // need a getter for this 
-=======
-
-private:
-
-	UPROPERTY(ReplicatedUsing = OnRep_EquippedWeapon)
-    TWeakObjectPtr<class ABaseWeapon> equippedWeapon;
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 	
 	UPROPERTY(ReplicatedUsing = OnRep_EquippedWeapon)
 	TWeakObjectPtr<class ABaseWeapon> primaryWeapon; // variable that will store primary weapon
@@ -187,12 +145,9 @@ private:
 	UPROPERTY(ReplicatedUsing = OnRep_SecondaryWeapon)
 	TWeakObjectPtr<class ABaseWeapon> secondaryWeapon; // variable that will store secondary weapon
 
-<<<<<<< HEAD
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Testing", meta = (AllowPrivateAccess = "true"))	
 	TObjectPtr<class USkeletalMeshComponent> weaponMesh;
 
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 	UPROPERTY()
 	class ABaseCharacter* baseCharacter;
 
@@ -201,12 +156,6 @@ private:
 
 	TWeakObjectPtr<class ABaseCharacter> ownerCharacter;
 
-<<<<<<< HEAD
-=======
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Testing", meta = (AllowPrivateAccess = "true"))	
-	TObjectPtr<class USkeletalMeshComponent> weaponMesh;
-
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
     class UBasePickUpComponent* basePickUpComponent;
 
@@ -233,7 +182,6 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	EWeaponType WeaponType;
-<<<<<<< HEAD
 
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing = OnRep_WeaponState)
 	EWeaponState WeaponState;
@@ -244,8 +192,7 @@ private:
 	UPROPERTY(Replicated)
 	bool bIsFiring;
 		
-	UPROPERTY(Replicated)
-	bool bAiming = false;
+
 
 	class AMyHUD* HUD; 
 
@@ -256,8 +203,6 @@ private:
 	
 
 
-=======
->>>>>>> 0bcdb22c66cd4a7c278cb80e5b52113ddf83a582
 	
 	
 };
